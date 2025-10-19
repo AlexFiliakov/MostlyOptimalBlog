@@ -7,7 +7,8 @@ interface NavigationItem {
 }
 
 const CustomHeader: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
-  const baseDir = pathToRoot(fileData.slug!)
+  // const baseDir = pathToRoot(fileData.slug!)
+  const baseDir = "https://mostlyoptimal.com/"
 
   const navigationItems: NavigationItem[] = [
     { label: "Applications", href: "https://applications.mostlyoptimal.com/" },
