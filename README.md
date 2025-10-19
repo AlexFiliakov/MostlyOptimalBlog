@@ -2,7 +2,11 @@
 
 > “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
 
-## How to Run
+## How to Run Locally
+
+`npx quartz build --serve`
+
+## How to Deploy
 
 `npx quartz sync --no-pull`
 

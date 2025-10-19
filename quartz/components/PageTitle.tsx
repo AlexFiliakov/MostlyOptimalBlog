@@ -17,6 +17,8 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
           <>
             <span class="title-gold">{titleParts[0]}</span>
             <span class="title-forest"> {titleParts[1]}</span>
+            <br />
+            <span class="title-green">Applications</span>
           </>
         ) : (
           title
@@ -28,7 +30,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
 
 PageTitle.css = `
 .page-title {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin: 0;
   font-family: var(--headerFont);
   font-weight: 700;
@@ -50,6 +52,11 @@ PageTitle.css = `
 
 .page-title .title-forest {
   color: #2A4D3A;
+}
+
+.page-title .title-green {
+  color: #00B4A6;
+  font-size: 2rem;
 }
 `
 

@@ -1,16 +1,7 @@
-﻿# Insurance Limit Selection Through Ergodicity: When the 99.9th Percentile Isn’t Enough
-
-[](https://medium.com/@alexfiliakov?source=post_page---byline--602bcf64c146---------------------------------------)
-
-![Alex Filiakov, ACAS](https://miro.medium.com/v2/resize:fill:64:64/1*WYXIwsvL7W-BQjtK3nci5g.jpeg)
-
-[Alex Filiakov, ACAS](https://medium.com/@alexfiliakov?source=post_page---byline--602bcf64c146---------------------------------------)
-
-13 min read
-
-·
-
-6 days ago
+﻿---
+title: "Insurance Limit Selection Through Ergodicity: When the 99.9th Percentile Isn’t Enough"
+date: 2025-10-12
+---
 
 ![](https://miro.medium.com/v2/resize:fit:3600/1*JwUxkt1SfDct-hUAJfGaXA.jpeg)
 

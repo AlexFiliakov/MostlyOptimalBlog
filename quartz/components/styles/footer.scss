@@ -4,18 +4,11 @@ footer {
   opacity: 1;
 
   &.ergodicity-footer {
-    background-color: #2A4D3A;
-    color: white;
+    // background-color: #2A4D3A;
+    color: rgb(42, 77, 58);
     padding: 2rem 1.5rem;
     margin-top: 4rem;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    clear: both;
   }
 
   & .footer-content {
@@ -25,7 +18,7 @@ footer {
   }
 
   & .footer-text {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(42, 77, 58, 0.8);
     font-size: 0.875rem;
     margin: 0;
   }
@@ -42,7 +35,7 @@ footer {
   }
 
   & a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(42, 77, 58, 0.8);
 
     &:hover {
       color: #F7C948;

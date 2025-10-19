@@ -176,12 +176,13 @@ CustomHeader.afterDOMLoaded = `
 CustomHeader.css = `
 .ergodicity-header {
   position: fixed;
-  top: 1rem;
+  top: -1rem;
   left: 0;
   right: 0;
   z-index: 1000;
   padding: 0 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  pointer-events: none;
 }
 
 .ergodicity-header.minimized-mode {
@@ -195,14 +196,18 @@ CustomHeader.css = `
 
 .header-container {
   max-width: 93%;
+  width: 93%;
   margin: 0 auto;
   height: 4rem;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   background: white;
   border-radius: 1rem;
   border: 1px solid #e5e5e5;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  pointer-events: auto;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
 }
 
 .header-container.minimized {
@@ -222,9 +227,9 @@ CustomHeader.css = `
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
   transition: all 0.3s;
+  gap: 2rem;
 }
 
 .logo-section {
@@ -243,10 +248,12 @@ CustomHeader.css = `
   font-family: var(--headerFont);
   font-weight: 700;
   font-size: 1.5rem;
+  letter-spacing: 0.02em;
 }
 
 .logo-gold {
   color: #F7C948;
+  margin-right: 0.25rem;
 }
 
 .logo-forest {
@@ -257,6 +264,8 @@ CustomHeader.css = `
   display: none;
   align-items: center;
   gap: 2rem;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 @media (min-width: 1024px) {
@@ -271,7 +280,9 @@ CustomHeader.css = `
 .nav-link {
   color: #2A4D3A;
   text-decoration: none;
+  font-family: "IBM Plex Sans", sans-serif;
   font-weight: 500;
+  font-size: 1rem;
   transition: color 0.2s;
   position: relative;
 }
@@ -314,9 +325,9 @@ CustomHeader.css = `
   left: 50%;
   transform: translateX(-50%);
   z-index: 1001;
-  padding: 0.5rem 1.25rem;
+  padding: 1rem 1.25rem;
   background: white;
-  border-radius: 2rem;
+  border-radius: 0.75rem;
   border: 1px solid #e5e5e5;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: opacity 0.2s ease;
@@ -328,7 +339,12 @@ CustomHeader.css = `
 }
 
 .minimized-logo .logo-text {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.minimized-logo .logo-gold {
+  margin-right: 0.25rem;
 }
 
 .minimized-logo.hidden {
@@ -339,14 +355,14 @@ CustomHeader.css = `
 
 .mobile-menu {
   position: fixed;
-  top: 6rem;
+  top: 5.5rem;
   left: 1rem;
   right: 1rem;
   background: white;
   border-radius: 1rem;
   border: 1px solid #e5e5e5;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-height: calc(100vh - 7rem);
+  max-height: calc(100vh - 6.5rem);
   overflow-y: auto;
   z-index: 999;
 }
@@ -392,19 +408,21 @@ CustomHeader.css = `
 
 /* Add spacing for fixed header */
 body {
-  padding-top: 6rem;
+  padding-top: 5.5rem;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .header-container {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
+    width: 93%;
   }
 }
 
 @media (max-width: 768px) {
   .header-container {
-    max-width: 95%;
+    width: 90%;
+    padding: 0 1rem;
   }
 }
 `
