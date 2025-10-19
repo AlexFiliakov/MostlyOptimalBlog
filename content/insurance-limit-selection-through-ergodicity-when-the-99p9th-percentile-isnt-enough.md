@@ -7,9 +7,9 @@ date: 2025-10-12
 
 Photo by  [Vida Huang](https://unsplash.com/@rebylulu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)  on  [Unsplash](https://unsplash.com/photos/warehouse-storage-filled-with-pallets-of-goods-I-_wYj9yOzw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-A single employee error triggers a product recall affecting 2 million units. Total losses: $380 million. Your company purchased a $100 million liability policy because it “covered losses at the 99.9th percentile.” The actuary who recommended that limit followed best practices, used sophisticated models, and got the probability calculations right.
+A single employee error triggers a product recall affecting 2 million units. Total losses: \$380 million. Your company purchased a \$100 million liability policy because it “covered losses at the 99.9th percentile.” The actuary who recommended that limit followed best practices, used sophisticated models, and got the probability calculations right.
 
-And it doesn’t matter. The remaining $280 million in uncovered losses wipes out 70% of your equity. Your credit rating collapses. Your expansion plans are cancelled. Competitors acquire market share while you’re managing the crisis. Ten years later, you’re still recovering from an event that happened in a single afternoon.
+And it doesn’t matter. The remaining \$280 million in uncovered losses wipes out 70% of your equity. Your credit rating collapses. Your expansion plans are cancelled. Competitors acquire market share while you’re managing the crisis. Ten years later, you’re still recovering from an event that happened in a single afternoon.
 
 ## Power Laws
 
@@ -81,7 +81,7 @@ Revenue is deterministic and proportional to assets, making net income stochasti
 
 The insurance structure consists of:
 
--   A per-occurrence deductible (held constant at $500K for this analysis, but other deductibles don’t materially sway the analysis of limits)
+-   A per-occurrence deductible (held constant at \$500K for this analysis, but other deductibles don’t materially sway the analysis of limits)
 -   A single per-occurrence limit (the variable under study)
 
 **Insurance Pricing**
@@ -128,7 +128,7 @@ Future posts will explore those more extreme scenarios.
 
 The Shape parameter in our results controls tail thickness: lower Shape values produce thicker tails with a higher probability of extreme events.
 
-> **For Practitioners**: When estimating tail risk for your business, the Shape parameter is critical. A Shape of 0.5 vs 0.9 can mean the difference between recommending a $250M limit and a $500M+ limit for the same company. Historical loss data and industry benchmarks help calibrate this, but uncertainty remains substantial.
+> **For Practitioners**: When estimating tail risk for your business, the Shape parameter is critical. A Shape of 0.5 vs 0.9 can mean the difference between recommending a \$250M limit and a \$500M+ limit for the same company. Historical loss data and industry benchmarks help calibrate this, but uncertainty remains substantial.
 
 ## Results & Analysis
 
@@ -142,7 +142,7 @@ The visualization below shows annualized growth rates over 50 years plotted agai
 
 The grid structure spans two key dimensions:
 
--   **Columns**  (left to right): Increasing initial capitalization from $25M to $150M
+-   **Columns**  (left to right): Increasing initial capitalization from \$25M to \$150M
 -   **Rows**  (top to bottom): Increasing tail thickness (Shape parameters 0.5, 0.7, and 0.9)
 
 Each subplot displays:
@@ -157,19 +157,19 @@ Let’s zoom in on some specific examples from above:
 
 Press enter or click to view image in full size
 
-![This diagram shows an initial capitalization of $50M with a Shape parameter of 0.5. Significant performance gap exists at low limits of coverage, while upper limits are not well differentiated.](images/2025_10_12_insurance_limit_selection/chart_cap_50m_shape_0p5.png)
+![This diagram shows an initial capitalization of \$50M with a Shape parameter of 0.5. Significant performance gap exists at low limits of coverage, while upper limits are not well differentiated.](images/2025_10_12_insurance_limit_selection/chart_cap_50m_shape_0p5.png)
 
 Since the tail shape of 0.5 results in a relatively light tail, few large losses are priced into the simulation, and the large limits appear very cheap. In practice, fixed administrative costs at higher limits would increase the loss ratios, making these limits more expensive than they seem in this scenario.
 
 Press enter or click to view image in full size
 
-![This diagram shows an initial capitalization of $25M with a Shape parameter of 0.9. In this scenario, $350M limit seems to represent the optimal tradeoff.](images/2025_10_12_insurance_limit_selection/chart_cap_25m_shape_0p9.png)
+![This diagram shows an initial capitalization of \$25M with a Shape parameter of 0.9. In this scenario, \$350M limit seems to represent the optimal tradeoff.](images/2025_10_12_insurance_limit_selection/chart_cap_25m_shape_0p9.png)
 
 We increase tail thickness so tradeoffs between the Median (navy) and the Mean (red) can be explored more clearly.
 
 Press enter or click to view image in full size
 
-![This diagram shows an initial capitalization of $150M with a Shape parameter of 0.9. In this scenario, the appetite for insurance limits appears to be significantly higher than the $1B simulated, meaning this scenario is likely dominated by supply-side insurance availability.](images/2025_10_12_insurance_limit_selection/chart_cap_150m_shape_0p9.png)
+![This diagram shows an initial capitalization of \$150M with a Shape parameter of 0.9. In this scenario, the appetite for insurance limits appears to be significantly higher than the \$1B simulated, meaning this scenario is likely dominated by supply-side insurance availability.](images/2025_10_12_insurance_limit_selection/chart_cap_150m_shape_0p9.png)
 
 If this tail scenario holds, and companies act rationally, the market will likely be dominated by supply side.
 
@@ -195,15 +195,15 @@ From an ensemble perspective (comparing many companies), lower limits look attra
 
 The relationship between company size and optimal limits is non-obvious but actuarially sound:
 
--   **$25M capitalization**: Across all tail assumptions, limits in the $350M-$500M range appear optimal. These companies are vulnerable to mid-sized catastrophic events and need substantial coverage relative to their capital base.
--   **$50M capitalization**: Tail assumptions become crucial. With thinner tails (Shape 0.5), limits around $250M suffice. With thicker tails (Shape 0.9), optimal limits push toward $500M or higher. The risk profile materially changes the calculus.
--   **$75M-$100M capitalization**: These larger companies show significant appetite for limits, especially under thick-tail scenarios. Optimal limits can rationally exceed $500M.
+-   **\$25M capitalization**: Across all tail assumptions, limits in the \$350M-\$500M range appear optimal. These companies are vulnerable to mid-sized catastrophic events and need substantial coverage relative to their capital base.
+-   **\$50M capitalization**: Tail assumptions become crucial. With thinner tails (Shape 0.5), limits around \$250M suffice. With thicker tails (Shape 0.9), optimal limits push toward \$500M or higher. The risk profile materially changes the calculus.
+-   **\$75M-\$100M capitalization**: These larger companies show significant appetite for limits, especially under thick-tail scenarios. Optimal limits can rationally exceed \$500M.
 
 This pattern aligns with the capital preservation logic: companies with higher capitalization have more to lose from extreme events.
 
 While large companies often self-insure smaller losses (choosing high deductibles), they simultaneously purchase high limits to protect their substantial capital base.
 
-The limited liability structure of modern corporations reinforces this dynamic. A $25M company can “only” lose $25M, but a $100M company faces quadruple that downside.
+The limited liability structure of modern corporations reinforces this dynamic. A \$25M company can “only” lose \$25M, but a \$100M company faces quadruple that downside.
 
 High limits become proportionally more valuable as capitalization increases.
 
@@ -246,7 +246,7 @@ Several insights from this analysis should transfer to more complex scenarios:
 These specific results depend heavily on the configuration choices:
 
 -   The tail assumptions
--   The $500K deductible assumption
+-   The \$500K deductible assumption
 -   The 60% uniform loss ratio
 -   The deterministic revenue model
 -   The absence of loss correlations
@@ -291,7 +291,7 @@ Press enter or click to view image in full size
 
 Insurance limit selection, viewed through an ergodic lens, reveals patterns that traditional actuarial analysis can miss. The tradeoff between median and mean performance, the interaction between capitalization and limit appetite, and the amplifying effects of tail thickness all emerge clearly from long-term simulation.
 
-Remember that $380M product recall from the opening? A company using this framework would have seen why a $100M limit left them catastrophically exposed. The mean growth trajectories for companies with Shape 0.9 and $50M capitalization clearly show that optimal limits approach or exceed $400M — precisely what’s needed to avoid the tail-wagging-dog scenario that devastated our hypothetical company.
+Remember that \$380M product recall from the opening? A company using this framework would have seen why a \$100M limit left them catastrophically exposed. The mean growth trajectories for companies with Shape 0.9 and \$50M capitalization clearly show that optimal limits approach or exceed \$400M — precisely what’s needed to avoid the tail-wagging-dog scenario that devastated our hypothetical company.
 
 For actuaries and risk managers, the message is clear:  **insurance limits aren’t just about expected loss coverage. They’re about protecting time-average growth trajectories from tail events that can permanently impair corporate prospects**.
 
@@ -305,7 +305,7 @@ I welcome your feedback in the comments: Do these insights align with your exper
 
 I simulated a lot more configurations than I presented in this blog post, so I’m posting them all for the curious as an appendix.
 
-### $500K Deductible with Additional Configurations
+### \$500K Deductible with Additional Configurations
 
 This contains the graphs we explored earlier, plus a few more:
 
@@ -313,19 +313,19 @@ This contains the graphs we explored earlier, plus a few more:
 
 In the bottom-right corner, you can see that certain heavy-tailed assumptions imply that low coverage limits deteriorate median performance, not just the mean, at higher initial capitalizations where there is significant liability exposure.
 
-### $250K Deductible with Additional Configurations
+### \$250K Deductible with Additional Configurations
 
 This represents configurations above at a lower deductible:
 
 ![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_250_threshold_0p0005.png)
 
-### $500K Deductible with More Dense Extreme Losses
+### \$500K Deductible with More Dense Extreme Losses
 
 In these configurations, the extreme tail attaches at a higher threshold, resulting in denser extreme losses.
 
 ![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_500_threshold_0p0001.png)
 
-### $250K Deductible with More Dense Extreme Losses
+### \$250K Deductible with More Dense Extreme Losses
 
 ![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_250_threshold_0p0001.png)
 
