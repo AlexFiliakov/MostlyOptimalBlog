@@ -75,6 +75,7 @@ const CustomHeader: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
 }
 
 CustomHeader.afterDOMLoaded = `
+  const header = document.querySelector('.ergodicity-header');
   const headerContainer = document.querySelector('.header-container');
   const minimizedLogo = document.querySelector('.minimized-logo');
   const mobileMenuButton = document.getElementById('mobile-menu-toggle');
@@ -109,12 +110,14 @@ CustomHeader.afterDOMLoaded = `
   }
 
   function updateHeaderState() {
-    if (!headerContainer || !minimizedLogo) return;
+    if (!header || !headerContainer || !minimizedLogo) return;
 
     if (isMinimized && !isHeaderHovered && !isScrollingUp) {
+      header.classList.add('minimized-mode');
       headerContainer.classList.add('minimized');
       minimizedLogo.classList.remove('hidden');
     } else {
+      header.classList.remove('minimized-mode');
       headerContainer.classList.remove('minimized');
       minimizedLogo.classList.add('hidden');
     }
@@ -178,25 +181,34 @@ CustomHeader.css = `
   right: 0;
   z-index: 1000;
   padding: 0 1rem;
+  transition: all 0.3s ease;
+}
+
+.ergodicity-header.minimized-mode {
+  pointer-events: none;
+}
+
+.ergodicity-header.minimized-mode .header-container {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .header-container {
   max-width: 93%;
   margin: 0 auto;
   height: 4rem;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+  background: white;
   border-radius: 1rem;
-  border: 1px solid transparent;
-  background: transparent;
-  backdrop-filter: blur(4px);
-  transition: all 0.5s ease-in-out;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
 }
 
 .header-container.minimized {
-  width: 280px;
-  height: 4rem;
-  overflow: hidden;
-  transition: all 0.5s ease-linear;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .header-container.minimized .header-content {
@@ -205,18 +217,13 @@ CustomHeader.css = `
   visibility: hidden;
 }
 
-.header-container:hover,
-.header-container.scrolled {
-  background: white;
-  border-color: #e5e5e5;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
 .header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   transition: all 0.3s;
 }
 
@@ -307,29 +314,39 @@ CustomHeader.css = `
   left: 50%;
   transform: translateX(-50%);
   z-index: 1001;
-  padding: 1rem;
+  padding: 0.5rem 1.25rem;
   background: white;
-  border-radius: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
   border: 1px solid #e5e5e5;
-  transition: opacity 0.1s ease-linear;
-  transition-delay: 350ms;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.2s ease;
+  transition-delay: 0.2s;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  width: auto;
+}
+
+.minimized-logo .logo-text {
+  font-size: 1.25rem;
 }
 
 .minimized-logo.hidden {
   opacity: 0;
   pointer-events: none;
+  transition-delay: 0s;
 }
 
 .mobile-menu {
   position: fixed;
-  top: 5rem;
-  left: 0;
-  right: 0;
+  top: 6rem;
+  left: 1rem;
+  right: 1rem;
   background: white;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(174, 198, 193, 0.2);
-  max-height: calc(100vh - 5rem);
+  border-radius: 1rem;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: calc(100vh - 7rem);
   overflow-y: auto;
   z-index: 999;
 }
@@ -353,6 +370,17 @@ CustomHeader.css = `
   transition: background-color 0.2s, color 0.2s;
 }
 
+.mobile-nav-link:first-child {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.mobile-nav-link:last-child {
+  border-bottom: none;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
 .mobile-nav-link:hover {
   background-color: rgba(174, 198, 193, 0.1);
   color: #00B4A6;
@@ -365,6 +393,19 @@ CustomHeader.css = `
 /* Add spacing for fixed header */
 body {
   padding-top: 6rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    max-width: 95%;
+  }
 }
 `
 

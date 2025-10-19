@@ -160,10 +160,7 @@ table {
   }
 }
 
-// Spacing for fixed header
-.page {
-  padding-top: 2rem;
-}
+// Spacing for fixed header - handled by CustomHeader component CSS
 
 // Content meta styling
 .content-meta {
