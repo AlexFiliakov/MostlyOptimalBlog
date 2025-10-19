@@ -9,23 +9,24 @@ html {
 
 // Body styling to match main site
 body {
-  background-color: #FFFFFF;
-  color: #2A4D3A;
+  // Use CSS variable for background to support dark mode
+  background-color: var(--light);
+  color: var(--darkgray);
 }
 
 // Headers with Playfair Display font weight
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--headerFont);
-  color: #2A4D3A;
+  color: var(--dark);
 }
 
 // Link styling to match main site
 a {
-  color: #00B4A6;
+  color: var(--secondary);
   transition: color 0.2s ease;
 
   &:hover {
-    color: #F7C948;
+    color: var(--tertiary);
   }
 }
 
@@ -37,44 +38,44 @@ button {
 
 // Code blocks with main site colors
 pre {
-  background-color: #f5f5f5;
-  border: 1px solid #D7DCD7;
+  background-color: var(--lightgray);
+  border: 1px solid var(--lightgray);
 }
 
 code {
   font-family: var(--codeFont);
-  background-color: #f5f5f5;
-  color: #2A4D3A;
+  background-color: var(--lightgray);
+  color: var(--darkgray);
 }
 
 // Blockquotes with accent color
 blockquote {
-  border-left-color: #00B4A6;
-  color: #2A4D3A;
+  border-left-color: var(--secondary);
+  color: var(--darkgray);
 }
 
 // Tables with main site styling
 table {
   th {
-    background-color: #f5f5f5;
-    color: #2A4D3A;
-    border-bottom-color: #AEC6C1;
+    background-color: var(--lightgray);
+    color: var(--darkgray);
+    border-bottom-color: var(--gray);
   }
 
   td {
-    border-bottom-color: #D7DCD7;
+    border-bottom-color: var(--lightgray);
   }
 }
 
 // Search box styling
 .search {
   input {
-    border-color: #D7DCD7;
-    background-color: #FFFFFF;
-    color: #2A4D3A;
+    border-color: var(--lightgray);
+    background-color: var(--light);
+    color: var(--darkgray);
 
     &:focus {
-      border-color: #00B4A6;
+      border-color: var(--secondary);
     }
   }
 }
@@ -82,10 +83,10 @@ table {
 // Dark mode toggle styling
 .darkmode {
   svg {
-    fill: #2A4D3A;
+    fill: var(--darkgray);
 
     &:hover {
-      fill: #00B4A6;
+      fill: var(--secondary);
     }
   }
 }
@@ -93,22 +94,22 @@ table {
 // Explorer (file tree) styling
 .explorer {
   .folder-button {
-    color: #2A4D3A;
+    color: var(--darkgray);
 
     &:hover {
-      color: #00B4A6;
+      color: var(--secondary);
     }
   }
 
   .folder-title {
-    color: #2A4D3A;
+    color: var(--darkgray);
   }
 
   a {
-    color: #2A4D3A;
+    color: var(--darkgray);
 
     &:hover {
-      color: #00B4A6;
+      color: var(--secondary);
     }
   }
 }
@@ -116,10 +117,10 @@ table {
 // Table of Contents styling
 .toc {
   a {
-    color: #2A4D3A;
+    color: var(--darkgray);
 
     &:hover {
-      color: #00B4A6;
+      color: var(--secondary);
     }
   }
 }
@@ -127,21 +128,21 @@ table {
 // Graph view styling
 .graph {
   path {
-    stroke: #AEC6C1;
+    stroke: var(--gray);
   }
 
   circle {
-    fill: #00B4A6;
+    fill: var(--secondary);
   }
 }
 
 // Breadcrumbs styling
 .breadcrumb-container {
   a {
-    color: #2A4D3A;
+    color: var(--darkgray);
 
     &:hover {
-      color: #00B4A6;
+      color: var(--secondary);
     }
   }
 }
@@ -149,13 +150,13 @@ table {
 // Tag list styling
 .tags {
   a {
-    background-color: rgba(0, 180, 166, 0.1);
-    color: #2A4D3A;
-    border: 1px solid #AEC6C1;
+    background-color: color-mix(in srgb, var(--secondary) 10%, transparent);
+    color: var(--darkgray);
+    border: 1px solid var(--gray);
 
     &:hover {
-      background-color: rgba(247, 201, 72, 0.2);
-      border-color: #F7C948;
+      background-color: color-mix(in srgb, var(--tertiary) 20%, transparent);
+      border-color: var(--tertiary);
     }
   }
 }
@@ -164,16 +165,16 @@ table {
 
 // Content meta styling
 .content-meta {
-  color: #5a6f5a;
+  color: var(--gray);
 }
 
 // Backlinks styling
 .backlinks {
   a {
-    color: #2A4D3A;
+    color: var(--darkgray);
 
     &:hover {
-      color: #00B4A6;
+      color: var(--secondary);
     }
   }
 }

@@ -42,3 +42,24 @@ footer {
     }
   }
 }
+
+// Dark mode overrides
+:root[saved-theme="dark"] {
+  footer {
+    &.ergodicity-footer {
+      color: rgb(180, 209, 184);
+    }
+
+    & .footer-text {
+      color: rgba(180, 209, 184, 0.8);
+    }
+
+    & a {
+      color: rgba(180, 209, 184, 0.8);
+
+      &:hover {
+        color: #F7C948;
+      }
+    }
+  }
+}
