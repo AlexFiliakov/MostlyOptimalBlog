@@ -14,10 +14,10 @@ const CustomHeader: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
     { label: "Applications", href: "https://applications.mostlyoptimal.com/" },
     { label: "Research", href: "https://mostlyoptimal.com/research/" },
     { label: "Foundations", href: "https://mostlyoptimal.com/theory/" },
-    { label: "FAQ", href: "https://ergodicityadvantage.com/faq/" },
+    { label: "FAQ", href: "https://mostlyoptimal.com/faq/" },
     { label: "Quick Start", href: "https://mostlyoptimal.com/tutorial/" },
-    { label: "About", href: "https://ergodicityadvantage.com/about/" },
-    { label: "Contact", href: "https://ergodicityadvantage.com/contact/" },
+    { label: "About", href: "https://mostlyoptimal.com/about/" },
+    { label: "Contact", href: "https://mostlyoptimal.com/contact/" },
   ]
 
   return (
