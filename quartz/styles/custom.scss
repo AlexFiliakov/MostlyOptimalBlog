@@ -1,3 +1,182 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Custom styling to match main Ergodicity Advantage site
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Body styling to match main site
+body {
+  background-color: #FFFFFF;
+  color: #2A4D3A;
+}
+
+// Headers with Playfair Display font weight
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headerFont);
+  color: #2A4D3A;
+}
+
+// Link styling to match main site
+a {
+  color: #00B4A6;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #F7C948;
+  }
+}
+
+// Buttons and interactive elements
+button {
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+
+// Code blocks with main site colors
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #D7DCD7;
+}
+
+code {
+  font-family: var(--codeFont);
+  background-color: #f5f5f5;
+  color: #2A4D3A;
+}
+
+// Blockquotes with accent color
+blockquote {
+  border-left-color: #00B4A6;
+  color: #2A4D3A;
+}
+
+// Tables with main site styling
+table {
+  th {
+    background-color: #f5f5f5;
+    color: #2A4D3A;
+    border-bottom-color: #AEC6C1;
+  }
+
+  td {
+    border-bottom-color: #D7DCD7;
+  }
+}
+
+// Search box styling
+.search {
+  input {
+    border-color: #D7DCD7;
+    background-color: #FFFFFF;
+    color: #2A4D3A;
+
+    &:focus {
+      border-color: #00B4A6;
+    }
+  }
+}
+
+// Dark mode toggle styling
+.darkmode {
+  svg {
+    fill: #2A4D3A;
+
+    &:hover {
+      fill: #00B4A6;
+    }
+  }
+}
+
+// Explorer (file tree) styling
+.explorer {
+  .folder-button {
+    color: #2A4D3A;
+
+    &:hover {
+      color: #00B4A6;
+    }
+  }
+
+  .folder-title {
+    color: #2A4D3A;
+  }
+
+  a {
+    color: #2A4D3A;
+
+    &:hover {
+      color: #00B4A6;
+    }
+  }
+}
+
+// Table of Contents styling
+.toc {
+  a {
+    color: #2A4D3A;
+
+    &:hover {
+      color: #00B4A6;
+    }
+  }
+}
+
+// Graph view styling
+.graph {
+  path {
+    stroke: #AEC6C1;
+  }
+
+  circle {
+    fill: #00B4A6;
+  }
+}
+
+// Breadcrumbs styling
+.breadcrumb-container {
+  a {
+    color: #2A4D3A;
+
+    &:hover {
+      color: #00B4A6;
+    }
+  }
+}
+
+// Tag list styling
+.tags {
+  a {
+    background-color: rgba(0, 180, 166, 0.1);
+    color: #2A4D3A;
+    border: 1px solid #AEC6C1;
+
+    &:hover {
+      background-color: rgba(247, 201, 72, 0.2);
+      border-color: #F7C948;
+    }
+  }
+}
+
+// Spacing for fixed header
+.page {
+  padding-top: 2rem;
+}
+
+// Content meta styling
+.content-meta {
+  color: #5a6f5a;
+}
+
+// Backlinks styling
+.backlinks {
+  a {
+    color: #2A4D3A;
+
+    &:hover {
+      color: #00B4A6;
+    }
+  }
+}
