@@ -23,11 +23,11 @@ Traditional actuarial limit selection optimizes ensemble averages. But companies
 
 Press enter or click to view image in full size
 
-![](https://miro.medium.com/v2/resize:fit:1050/1*tGbn92A0gnnqPv8wOC039w.png)
+![](images/2025_10_12_insurance_limit_selection/basic_ergodicity_example.png)
 
 Your company’s individual experience is not the ensemble.
 
-_Want to see the results and implications first?_ [_Skip to Results & Analysis._](https://medium.com/@alexfiliakov/insurance-limit-selection-through-ergodicity-when-the-99-9th-percentile-isnt-enough-602bcf64c146#2f7d)
+_Want to see the results and implications first?_ [_Skip to Results & Analysis._](#results--analysis)
 
 ## The Ergodic Perspective
 
@@ -51,7 +51,7 @@ Each corporate configuration is tested across 250,000 scenarios, providing a rob
 
 Press enter or click to view image in full size
 
-![](https://miro.medium.com/v2/resize:fit:1500/1*imAjeY517c4_-mC-8GWBhA.jpeg)
+![](images/2025_10_12_insurance_limit_selection/policy_selection.webp)
 
 The framework builds on the methodology detailed in my research paper at  [https://mostlyoptimal.com/research](https://mostlyoptimal.com/research), which introduced a new open-source framework for ergodic insurance analysis, and then applied it to explore deductible selection. Here, I apply that framework to analyze insurance limits.
 
@@ -65,7 +65,7 @@ This four-tier approach captures the full spectrum from routine operational loss
 
 Press enter or click to view image in full size
 
-![](https://miro.medium.com/v2/resize:fit:1050/1*u7fdu0sAe1JZYN1hE-llAw.png)
+![](images/2025_10_12_insurance_limit_selection/severity_histogram.png)
 
 Resulting illustrative aggregate severity distribution, with orange highlighting the tail. Logarithmic x-axis.
 
@@ -108,7 +108,7 @@ These simplifications allow us to isolate the ergodic effects of limit selection
 
 Press enter or click to view image in full size
 
-![](https://miro.medium.com/v2/resize:fit:1500/1*AmhKJU1-m6BMDlQrdF7Gag.jpeg)
+![](images/2025_10_12_insurance_limit_selection/whale_tail.webp)
 
 Before diving into results, we need to establish what “tail risk” means in this context.
 
@@ -136,7 +136,7 @@ The Shape parameter in our results controls tail thickness: lower Shape values p
 
 The visualization below shows annualized growth rates over 50 years plotted against per-occurrence insurance limits:
 
-![](https://miro.medium.com/v2/resize:fit:8946/1*hNYnKoF8eabghtEyz4NwIQ.png)
+![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_500k_threshold_0p0005_curated.png)
 
 ### Reading the Visualization
 
@@ -157,19 +157,19 @@ Let’s zoom in on some specific examples from above:
 
 Press enter or click to view image in full size
 
-![This diagram shows an initial capitalization of $50M with a Shape parameter of 0.5. Significant performance gap exists at low limits of coverage, while upper limits are not well differentiated.](https://miro.medium.com/v2/resize:fit:1050/1*Cit5vDTwxbkrBF51M1Bovg.png)
+![This diagram shows an initial capitalization of $50M with a Shape parameter of 0.5. Significant performance gap exists at low limits of coverage, while upper limits are not well differentiated.](images/2025_10_12_insurance_limit_selection/chart_cap_50m_shape_0p5.png)
 
 Since the tail shape of 0.5 results in a relatively light tail, few large losses are priced into the simulation, and the large limits appear very cheap. In practice, fixed administrative costs at higher limits would increase the loss ratios, making these limits more expensive than they seem in this scenario.
 
 Press enter or click to view image in full size
 
-![This diagram shows an initial capitalization of $25M with a Shape parameter of 0.9. In this scenario, $350M limit seems to represent the optimal tradeoff.](https://miro.medium.com/v2/resize:fit:1050/1*jEp-ZMhhoV0Ywsu4ty5SxQ.png)
+![This diagram shows an initial capitalization of $25M with a Shape parameter of 0.9. In this scenario, $350M limit seems to represent the optimal tradeoff.](images/2025_10_12_insurance_limit_selection/chart_cap_25m_shape_0p9.png)
 
 We increase tail thickness so tradeoffs between the Median (navy) and the Mean (red) can be explored more clearly.
 
 Press enter or click to view image in full size
 
-![This diagram shows an initial capitalization of $150M with a Shape parameter of 0.9. In this scenario, the appetite for insurance limits appears to be significantly higher than the $1B simulated, meaning this scenario is likely dominated by supply-side insurance availability.](https://miro.medium.com/v2/resize:fit:1050/1*fBHCDGyDA0Ftm0wam1IfVA.png)
+![This diagram shows an initial capitalization of $150M with a Shape parameter of 0.9. In this scenario, the appetite for insurance limits appears to be significantly higher than the $1B simulated, meaning this scenario is likely dominated by supply-side insurance availability.](images/2025_10_12_insurance_limit_selection/chart_cap_150m_shape_0p9.png)
 
 If this tail scenario holds, and companies act rationally, the market will likely be dominated by supply side.
 
@@ -285,7 +285,7 @@ My immediate next research focus will explore tail thickness more deeply and inv
 
 Press enter or click to view image in full size
 
-![](https://miro.medium.com/v2/resize:fit:1500/1*ImSUnGiL7J62sKZVTVc3xA.jpeg)
+![](images/2025_10_12_insurance_limit_selection/boardroom.webp)
 
 > **Insurance limits protect time-average growth trajectories from tail events that can permanently impair corporate prospects.**
 
@@ -309,7 +309,7 @@ I simulated a lot more configurations than I presented in this blog post, so I�
 
 This contains the graphs we explored earlier, plus a few more:
 
-![](https://miro.medium.com/v2/resize:fit:13446/1*H4T10u_chHzEVAfOq5PWSw.png)
+![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_500_threshold_0p0005.png)
 
 In the bottom-right corner, you can see that certain heavy-tailed assumptions imply that low coverage limits deteriorate median performance, not just the mean, at higher initial capitalizations where there is significant liability exposure.
 
@@ -317,17 +317,17 @@ In the bottom-right corner, you can see that certain heavy-tailed assumptions im
 
 This represents configurations above at a lower deductible:
 
-![](https://miro.medium.com/v2/resize:fit:13446/1*sWmD3m71BSbw3v-IEVUOYg.png)
+![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_250_threshold_0p0005.png)
 
 ### $500K Deductible with More Dense Extreme Losses
 
 In these configurations, the extreme tail attaches at a higher threshold, resulting in denser extreme losses.
 
-![](https://miro.medium.com/v2/resize:fit:13446/1*XrUyQKyruKT85KYRIQguOA.png)
+![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_500_threshold_0p0001.png)
 
 ### $250K Deductible with More Dense Extreme Losses
 
-![](https://miro.medium.com/v2/resize:fit:13446/1*ZSkSnyjQC6wzoaDNc7sZGw.png)
+![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_250_threshold_0p0001.png)
 
 ### t-SNE Plot of Results
 
@@ -339,7 +339,7 @@ Each point on the plot below is a different scenario configuration and represent
 -   The island on the bottom-right represents scenarios without insurance.
 -   The island on the top-left represents configurations with the thinnest tail (no GPD attachment).
 
-![t-SNE visualization of all configurations.](https://miro.medium.com/v2/resize:fit:6351/1*puzcftzUBl-K2celPHz1_A.gif)
+![t-SNE visualization of all configurations.](images/2025_10_12_insurance_limit_selection/t_sne.gif)
 
 ## **Source Files**
 
