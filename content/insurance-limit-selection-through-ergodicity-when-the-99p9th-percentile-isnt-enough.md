@@ -118,7 +118,7 @@ While this excludes some “pathological” heavy-tailed distributions (like pow
 
 Future posts will explore those more extreme scenarios.
 
-The Shape parameter in our results controls tail thickness: lower Shape values produce thicker tails with a higher probability of extreme events.
+The Shape parameter in our results controls tail thickness: higher Shape values produce thicker tails with a higher probability of extreme events.
 
 > **For Practitioners**: When estimating tail risk for your business, the Shape parameter is critical. A Shape of 0.5 vs 0.9 can mean the difference between recommending a \$250M limit and a \$500M+ limit for the same company. Historical loss data and industry benchmarks help calibrate this, but uncertainty remains substantial.
 
