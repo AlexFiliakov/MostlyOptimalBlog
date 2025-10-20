@@ -3,7 +3,7 @@ title: "Insurance Limit Selection Through Ergodicity: When the 99.9th Percentile
 date: 2025-10-12
 ---
 
-![](https://miro.medium.com/v2/resize:fit:3600/1*JwUxkt1SfDct-hUAJfGaXA.jpeg)
+![](images/2025_10_12_insurance_limit_selection/warehouse.webp)
 
 Photo by  [Vida Huang](https://unsplash.com/@rebylulu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)  on  [Unsplash](https://unsplash.com/photos/warehouse-storage-filled-with-pallets-of-goods-I-_wYj9yOzw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -20,8 +20,6 @@ This is why insurance limit selection matters more than most actuaries realize. 
 ## The Problem
 
 Traditional actuarial limit selection optimizes ensemble averages. But companies don’t operate across ensembles; they operate in time. This post explores how that distinction changes everything about optimal insurance limits.
-
-Press enter or click to view image in full size
 
 ![](images/2025_10_12_insurance_limit_selection/basic_ergodicity_example.png)
 
@@ -49,8 +47,6 @@ Each corporate configuration is tested across 250,000 scenarios, providing a rob
 
 ## Simulation Framework
 
-Press enter or click to view image in full size
-
 ![](images/2025_10_12_insurance_limit_selection/policy_selection.webp)
 
 The framework builds on the methodology detailed in my research paper at  [https://mostlyoptimal.com/research](https://mostlyoptimal.com/research), which introduced a new open-source framework for ergodic insurance analysis, and then applied it to explore deductible selection. Here, I apply that framework to analyze insurance limits.
@@ -62,8 +58,6 @@ The simulation employs a four-tier loss structure that reflects the reality of c
 Revenue serves as the exposure base for all loss frequencies, scaling risk with company size.
 
 This four-tier approach captures the full spectrum from routine operational losses to true black swans, excepting loss correlations.
-
-Press enter or click to view image in full size
 
 ![](images/2025_10_12_insurance_limit_selection/severity_histogram.png)
 
@@ -105,8 +99,6 @@ This framework makes several simplifying assumptions:
 These simplifications allow us to isolate the ergodic effects of limit selection, but they also mean  **these specific results do not generalize directly to real corporate structures**. However, the directional insights and underlying mechanisms should transfer to more complex scenarios, and the framework can be adapted to study individual cases.
 
 ## Understanding Tail Risk
-
-Press enter or click to view image in full size
 
 ![](images/2025_10_12_insurance_limit_selection/whale_tail.webp)
 
@@ -155,19 +147,13 @@ Each subplot displays:
 
 Let’s zoom in on some specific examples from above:
 
-Press enter or click to view image in full size
-
 ![This diagram shows an initial capitalization of \$50M with a Shape parameter of 0.5. Significant performance gap exists at low limits of coverage, while upper limits are not well differentiated.](images/2025_10_12_insurance_limit_selection/chart_cap_50m_shape_0p5.png)
 
 Since the tail shape of 0.5 results in a relatively light tail, few large losses are priced into the simulation, and the large limits appear very cheap. In practice, fixed administrative costs at higher limits would increase the loss ratios, making these limits more expensive than they seem in this scenario.
 
-Press enter or click to view image in full size
-
 ![This diagram shows an initial capitalization of \$25M with a Shape parameter of 0.9. In this scenario, \$350M limit seems to represent the optimal tradeoff.](images/2025_10_12_insurance_limit_selection/chart_cap_25m_shape_0p9.png)
 
 We increase tail thickness so tradeoffs between the Median (navy) and the Mean (red) can be explored more clearly.
-
-Press enter or click to view image in full size
 
 ![This diagram shows an initial capitalization of \$150M with a Shape parameter of 0.9. In this scenario, the appetite for insurance limits appears to be significantly higher than the \$1B simulated, meaning this scenario is likely dominated by supply-side insurance availability.](images/2025_10_12_insurance_limit_selection/chart_cap_150m_shape_0p9.png)
 
@@ -282,8 +268,6 @@ Beyond technical enhancements, several research questions emerge:
 My immediate next research focus will explore tail thickness more deeply and investigate layered loss ratio structures that better reflect real insurance markets.
 
 ## Final Thoughts
-
-Press enter or click to view image in full size
 
 ![](images/2025_10_12_insurance_limit_selection/boardroom.webp)
 
