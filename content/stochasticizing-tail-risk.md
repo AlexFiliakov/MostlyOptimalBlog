@@ -3,7 +3,9 @@ title: "Stochasticizing Tail Risk"
 date: 2025-10-20
 ---
 
-In practice, it's difficult to fit the tail shape of extreme losses to historical data because the data is very sparse.
+In practice, it's difficult to fit the tail shape of extreme losses to historical data because the data is very sparse. One approach is to make the tail stochastic and explore the resulting outcome space for reasonability. In this article, we study the outcome space of various insurance programs for a simplified company under loss assumptions with stochasticized parameters. We also apply Sobol sequences to increase the rate of convergence.
+
+The setup in this example is inspired by the manufacturing industry, but it should be treaded as merely a demonstration of the software's capabilities, and this article should not be used to make any insurance decisions. Any conclusions reached here for our model company are spurious and not to be taken as conclusive. **All corporate insurance purchasing decisions must be made in the full context of the individual company.**
 
 ## Company Configuration
 
@@ -50,7 +52,9 @@ _Technical note: this distribution is essentially a Beta distribution made unbou
 
 ## Sobol Sequences for Risk Simulation
 
-Sobol sequences are quasi-random (low-discrepancy) sequences that systematically fill a multidimensional space more uniformly than standard pseudo-random Monte Carlo draws. In our 2D application, we use Sobol sequences to simultaneously sample uncertainty in both the Poisson frequency multiplier (via a Gamma distribution) and the extreme loss tail shape parameter (via a logit-unbounded Beta distribution). Unlike pseudo-random sampling, which can leave gaps and clusters in the parameter space by chance, Sobol sequences ensure proportional coverage of all regions of the joint distribution from the very first simulations. This property, known as equidistribution, leads to faster convergence of the simulated risk metrics we care about most.
+> The advantage of using Sobol sequences is faster convergence across all statistics
+
+**Sobol sequences** are quasi-random (low-discrepancy) sequences that systematically fill a multidimensional space more uniformly than standard pseudo-random Monte Carlo draws. In our 2D application, we use Sobol sequences to simultaneously sample uncertainty in both the Poisson frequency multiplier (via a Gamma distribution) and the extreme loss tail shape parameter (via a logit-unbounded Beta distribution). Unlike pseudo-random sampling, which can leave gaps and clusters in the parameter space by chance, Sobol sequences ensure proportional coverage of all regions of the joint distribution from the very first simulations. This property, known as equidistribution, leads to faster convergence of the simulated risk metrics we care about most.
 
 The advantage of using Sobol sequences is faster convergence across all statistics, but particularly for tail risk metrics like the 95th and 99th percentile value at risk (VaR) and conditional tail expectations (CTE) that drive insurance program decisions. In testing, Sobol-based simulations often achieve comparable accuracy to pseudo-random Monte Carlo with 4-10x fewer iterations, reducing runtime substantially when evaluating multiple insurance program structures. More importantly for risk management, the tail estimates are more stable and reproducible at smaller sample sizes, which is critical when presenting results to senior leadership or comparing program alternatives. For our time-average performance analysis, this means we can efficiently explore a wider range of insurance program parameters while maintaining confidence in the extreme scenarios that ultimately determine program adequacy.
 
