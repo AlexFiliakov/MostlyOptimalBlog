@@ -325,7 +325,7 @@ Each point on the plot below is a different scenario configuration and represent
 
 ![t-SNE visualization of all configurations.](images/2025_10_12_insurance_limit_selection/t_sne.gif)
 
-## **Source Files**
+## Source Files
 
 You can explore this setup by downloading the following Jupyter Notebook and the associated Python Script. You need to configure the scenario parameters and increase the number of simulations once you’re satisfied with your setup.
 
@@ -337,11 +337,10 @@ You need both of these to run, plus run the following in a virtual environment t
 
 `!pip install --user --upgrade --force-reinstall git+https://github.com/AlexFiliakov/Ergodic-Insurance-Limits`
 
-### Read About the Framework
+## Read About the Framework
 
 [https://mostlyoptimal.com](https://mostlyoptimal.com/)  contains a high-level overview and the motivation for creating this framework.
 
 [https://mostlyoptimal.com/research](https://mostlyoptimal.com/research)  includes a research paper that describes the framework in some detail.
 
 [https://mostlyoptimal.com/tutorial](https://mostlyoptimal.com/tutorial)  consists of a guide to get started in applying the framework to your specific use cases.
-
