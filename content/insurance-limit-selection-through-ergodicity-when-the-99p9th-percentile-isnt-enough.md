@@ -287,7 +287,7 @@ I welcome your feedback in the comments: Do these insights align with your exper
 
 ## Appendix — Additional Diagrams for the Curious
 
-I simulated a lot more configurations than I presented in this blog post, so I’m posting them all for the curious as an appendix.
+I simulated a lot more configurations than I presented in this article, so I’m posting them all for the curious as an appendix.
 
 ### \$500K Deductible with Additional Configurations
 

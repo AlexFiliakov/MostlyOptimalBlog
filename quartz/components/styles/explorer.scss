@@ -130,6 +130,15 @@ button.desktop-explorer {
         color: var(--tertiary);
       }
     }
+
+    // Add divider between blog posts (file items)
+    & > li:has(> a):not(:last-child)::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: rgb(215, 220, 215);
+      margin: 5px 0px;
+    }
   }
 
   .folder-outer {
