@@ -34,11 +34,11 @@ The simulation employs a four-tier loss structure that reflects the reality of c
 Revenue serves as the exposure base for all loss frequencies, scaling risk with company size.
 This four-tier approach captures the full spectrum from routine operational losses to true black swans, excepting loss correlations.
 - Attritional Loss Frequency (Poisson): 2.85 * (Frequency Multiplier)
-- Attritional Loss Severity (Lognormal): 
+- Attritional Loss Severity (Lognormal): Mean=\$40K with Coefficient of Variation (CV)=0.8
 - Large Loss Frequency (Poisson): 0.20 * (Frequency Multiplier)
-- Large Loss Severity (Lognormal): 
+- Large Loss Severity (Lognormal): Mean=\$500K with CV=1.5
 - Catastrophic Loss Frequency (Poisson): 0.02 * (Frequency Multiplier)
-- Catastrophic Loss (Pareto): Minimum=\$5,000,000 with Alpha=2.5
+- Catastrophic Loss (Pareto): Minimum=\$5M with Alpha=2.5
 - Extreme Losses are configured to replace extreme losses with a Generalized Pareto Distribution calibrated to match tail percentiles, but with a thicker tail.
 
 ### Stochastic Tail Shape Parameter
@@ -100,7 +100,7 @@ The median here suggests that the \$100K deductible is clearly favored under thi
 
 ![](images/2025_10_20_stoch_tail_shape_with_sobol/surface_growth_rate_5%25_cte.png)
 
-The CTE contrasts with the median growth rate by clearly favoring the \$200K deductible over the \$100K deductibles in the worst cases, while the median clearly favors retaining more risk via the \$200K deductible.
+The CTE contrasts with the median growth rate by clearly favoring the \$250K deductible over the \$100K deductibles in the worst cases, while the median clearly favors retaining more risk via the \$250K deductible.
 
 **Mean Growth Rate Analysis With Thinner Tail**
 
