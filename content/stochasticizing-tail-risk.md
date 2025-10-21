@@ -81,3 +81,63 @@ This framework makes several simplifying assumptions:
 These simplifications allow us to isolate the ergodic effects of limit selection, but they also mean  these specific results do not generalize directly to real corporate structures. However, the directional insights and underlying mechanisms should transfer to more complex scenarios, and the framework can be adapted to study individual cases.
 
 ## Exploring Results
+
+Looking at the results at a high level, it appears that buying the maximum limit is advisable for this specific company and loss configuration.
+
+**Mean Growth Rate Analysis**
+
+![](images/2025_10_20_stoch_tail_shape_with_sobol/surface_growth_rate_mean.png)
+
+Low deductibles and high limits are the theme here. Maximizing coverage.
+
+**Median Growth Rate Analysis**
+
+![](images/2025_10_20_stoch_tail_shape_with_sobol/surface_growth_rate_median.png)
+
+The median here suggests that the \$100K deductible is clearly favored under this configuration.
+
+**5% Conditional Tail Expectation (CTE) of the Growth Rate**
+
+![](images/2025_10_20_stoch_tail_shape_with_sobol/surface_growth_rate_5%25_cte.png)
+
+The CTE contrasts with the median growth rate by clearly favoring the \$200K deductible over the \$100K deductibles in the worst cases, while the median clearly favors retaining more risk via the \$200K deductible.
+
+**Mean Growth Rate Analysis With Thinner Tail**
+
+Next, we reduce the tail thickness significantly by filtering out thick-tailed scenarios, but the results still mostly favor low deductibles and high limits:
+
+![](images/2025_10_20_stoch_tail_shape_with_sobol/surface_growth_rate_mean_thinner_tail.png)
+
+Although in this case, the choice of deductibles seems to have little impact on results.
+
+**Median Growth Rate Analysis With Thinner Tail**
+
+![](images/2025_10_20_stoch_tail_shape_with_sobol/surface_growth_rate_median_thinner_tail.png)
+
+**5% CTE of the Growth Rate With Thinner Tail**
+
+![](images/2025_10_20_stoch_tail_shape_with_sobol/surface_growth_rate_5%_cte_thinner_tail.png)
+
+Under all evaluations, thin-tailed losses appear to make the deductible irrelevant.
+
+Question: why would that be?
+
+## Source Files
+
+You can explore this setup by downloading the following Jupyter Notebook and the associated Python Script. You need to configure the scenario parameters and increase the number of simulations once you’re satisfied with your setup.
+
+[Jupyter Notebook — Stochastic Tail Simulations](https://github.com/AlexFiliakov/Ergodic-Insurance-Limits/blob/main/ergodic_insurance/notebooks/results_stoch_tail_sim_01/ergodicity_hier_tail_sim_parallel.ipynb)
+
+[Python Script — Company and Loss Configuration](https://github.com/AlexFiliakov/Ergodic-Insurance-Limits/blob/main/ergodic_insurance/notebooks/results_stoch_tail_sim_01/run_hier_tail_sim_colab.py)
+
+You need both of these to run, plus run the following in a virtual environment to get the underlying framework:
+
+`!pip install --user --upgrade --force-reinstall git+https://github.com/AlexFiliakov/Ergodic-Insurance-Limits`
+
+## Read About the Framework
+
+[https://mostlyoptimal.com](https://mostlyoptimal.com/)  contains a high-level overview and the motivation for creating this framework.
+
+[https://mostlyoptimal.com/research](https://mostlyoptimal.com/research)  includes a research paper that describes the framework in some detail.
+
+[https://mostlyoptimal.com/tutorial](https://mostlyoptimal.com/tutorial)  consists of a guide to get started in applying the framework to your specific use cases.
