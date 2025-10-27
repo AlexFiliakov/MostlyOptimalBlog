@@ -1,3 +1,5 @@
+!public/favicon.ico
+
 .DS_Store
 .gitignore
 node_modules
