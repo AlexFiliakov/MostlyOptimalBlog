@@ -1,5 +1,5 @@
 ---
-title: "Beyond Point Estimates: Stochasticizing Tail Uncertainty With Sobol Sequences"
+title: "02. Beyond Point Estimates: Stochasticizing Tail Uncertainty With Sobol Sequences"
 date: 2025-10-20
 ---
 

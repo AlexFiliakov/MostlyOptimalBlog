@@ -1,5 +1,5 @@
 ---
-title: "The Insurance Cliff: Where Small Decisions Create Catastrophic Outcomes"
+title: "03. The Insurance Cliff: Where Small Decisions Create Catastrophic Outcomes"
 date: 2025-10-26
 ---
 

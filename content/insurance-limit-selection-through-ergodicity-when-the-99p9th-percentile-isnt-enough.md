@@ -1,5 +1,5 @@
 ﻿---
-title: "Insurance Limit Selection Through Ergodicity: When the 99.9th Percentile Isn’t Enough"
+title: "01. Insurance Limit Selection Through Ergodicity: When the 99.9th Percentile Isn’t Enough"
 date: 2025-10-12
 ---
 
