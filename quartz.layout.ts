@@ -7,7 +7,7 @@ export const sharedPageComponents: SharedLayout = {
   header: [Component.CustomHeader()],
   afterBody: [],
   footer: Component.Footer({
-    links: {},
+    links: {"GitHub": "https://github.com/AlexFiliakov/Ergodic-Insurance-Limits"},
   }),
 }
 
