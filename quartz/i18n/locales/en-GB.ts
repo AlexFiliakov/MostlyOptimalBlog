@@ -33,7 +33,7 @@ export default {
       title: "Reader mode",
     },
     explorer: {
-      title: "All Applications",
+      title: "Explore Applications",
     },
     footer: {
       createdWith: "Created with",
@@ -50,8 +50,8 @@ export default {
       linkToOriginal: "Link to original",
     },
     search: {
-      title: "Search",
-      searchBarPlaceholder: "Search for something",
+      title: "Search applications",
+      searchBarPlaceholder: "Search for a topic",
     },
     tableOfContents: {
       title: "Table of Contents",
