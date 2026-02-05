@@ -33,13 +33,13 @@ export default {
       title: "Reader mode",
     },
     explorer: {
-      title: "Explorer",
+      title: "All Applications",
     },
     footer: {
       createdWith: "Created with",
     },
     graph: {
-      title: "Graph View",
+      title: "Relationship Graph",
     },
     recentNotes: {
       title: "Recent Notes",
