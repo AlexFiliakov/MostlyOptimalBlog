@@ -344,3 +344,7 @@ You need both of these to run, plus run the following in a virtual environment t
 [https://mostlyoptimal.com/research](https://mostlyoptimal.com/research)  includes a research paper that describes the framework in some detail.
 
 [https://mostlyoptimal.com/tutorial](https://mostlyoptimal.com/tutorial)  consists of a guide to get started in applying the framework to your specific use cases.
+
+## Next Application
+
+[Stochasticizing Tail Uncertainty With Sobol Sequences](stochasticizing-tail-risk.md) This next article demonstrates an approach to stochasticizing the parameters we’re most uncertain about, specifically the frequency multiplier and extreme loss tail shape, and exploring the full outcome space across insurance program designs. We use Sobol sequences (quasi-random sampling) to efficiently cover this high-dimensional uncertainty space, then analyze how nearly 25,000 insurance program configurations perform under 1,000 different tail scenarios.

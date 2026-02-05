@@ -265,3 +265,7 @@ Next time you're evaluating insurance programs, ask yourself: **What parameter a
 You might discover, as we did here, that conventional wisdom (higher deductibles for worst-case scenarios, deductible selection matters most) doesn't hold up when you properly account for tail uncertainty. The patterns that emerge from stochastic parameter analysis can fundamentally reshape how you think about risk transfer.
 
 Try it on your own book of business. The insights might surprise you.
+
+## Next Application
+
+- [The Insurance Cliff](insurance-cliff-by-risk-profile.md) When you plot the relationship between initial capital, policy limits, and bankruptcy risk, you don’t get a gentle slope. You get a cliff. In the active tail of modeled losses, where your business operates, the choice of limits has a disproportionate effect on results.
