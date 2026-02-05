@@ -26,8 +26,8 @@ const CustomHeader: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
         <div class="header-content">
           <a href={baseDir} class="logo-section">
             <div class="logo-text">
-              <span class="logo-gold">Ergodicity</span>
-              <span class="logo-forest"> Advantage</span>
+              <span class="logo-gold">Mostly</span>
+              <span class="logo-forest"> Optimal</span>
             </div>
           </a>
 
@@ -56,8 +56,8 @@ const CustomHeader: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
       <div class="minimized-logo hidden">
         <a href={baseDir} class="logo-section">
           <div class="logo-text">
-            <span class="logo-gold">Ergodicity</span>
-            <span class="logo-forest"> Advantage</span>
+            <span class="logo-gold">Mostly</span>
+            <span class="logo-forest"> Optimal</span>
           </div>
         </a>
       </div>

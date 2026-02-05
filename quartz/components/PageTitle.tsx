@@ -7,7 +7,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
   const baseDir = pathToRoot(fileData.slug!)
 
-  // Split "Ergodicity Advantage" into two parts for styling
+  // Split "Mostly Optimal" into two parts for styling
   const titleParts = title.split(" ")
 
   return (

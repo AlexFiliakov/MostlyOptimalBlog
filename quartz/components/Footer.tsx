@@ -15,7 +15,7 @@ export default ((opts?: Options) => {
       <footer class={`${displayClass ?? ""} ergodicity-footer`}>
         <div class="footer-content">
           <p class="footer-text">
-            © {year} Ergodicity Advantage. Transforming risk management through first principles.
+            © {year} Mostly Optimal. Transforming risk management through first principles.
           </p>
           {Object.keys(links).length > 0 && (
             <ul>

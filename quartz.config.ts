@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Ergodicity Advantage",
+    pageTitle: "Mostly Optimal",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
