@@ -256,7 +256,7 @@ The complete implementation is available for you to modify and run:
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall git+https://github.com/AlexFiliakov/Ergodic-Insurance-Limits
+!pip install --user --upgrade --force-reinstall ergodic-insurance
 ```
 
 **Quick Start Guide**:

@@ -335,7 +335,11 @@ You can explore this setup by downloading the following Jupyter Notebook and the
 
 You need both of these to run, plus run the following in a virtual environment to get the underlying framework:
 
-`!pip install --user --upgrade --force-reinstall git+https://github.com/AlexFiliakov/Ergodic-Insurance-Limits`
+**Install the Framework**:
+
+```python
+!pip install --user --upgrade --force-reinstall ergodic-insurance
+```
 
 ## Read About the Framework
 

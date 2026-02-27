@@ -101,5 +101,5 @@ The full analysis, including all simulation parameters, mathematical derivations
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall git+https://github.com/AlexFiliakov/Ergodic-Insurance-Limits
+!pip install --user --upgrade --force-reinstall ergodic-insurance
 ```
