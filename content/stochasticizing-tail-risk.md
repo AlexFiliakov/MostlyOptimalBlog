@@ -16,6 +16,7 @@ The results reveal three surprising patterns about deductible and limit selectio
 ## Company Configuration
 
 I used the following company assumptions across all simulations:
+
 - Initial Assets: \$75M
 - Asset Turnover Ratio: 1.0 (Revenue = Assets * Turnover)
 - EBITA Before Claims and Insurance: 10%
@@ -35,7 +36,7 @@ Real-world loss frequencies fluctuate due to changing operations, risk environme
 
 The multiplier follows a Gamma(10, 0.1) distribution with mean = 1.0 and coefficient of variation ≈ 0.32. This creates scenarios where loss frequencies might run 30% below historical averages (multiplier ≈ 0.7) or 40% above (multiplier ≈ 1.4), while keeping most probability mass near the historical baseline.
 
-![](images/2025_10_20_stoch_tail_shape_with_sobol/freq_multiplier_dist.png)
+![Distribution of Frequency Multiplier](images/2025_10_20_stoch_tail_shape_with_sobol/freq_multiplier_dist.png)
 
 This single parameter scales all loss tiers simultaneously. If you experience more attritional losses in a given scenario, you also experience proportionally more catastrophic losses. While this simplifies away frequency correlation structures, it captures the intuition that risk environments have good years and bad years that affect all loss types.
 
@@ -44,21 +45,25 @@ This single parameter scales all loss tiers simultaneously. If you experience mo
 The simulation employs a four-tier loss structure that captures the full spectrum from routine operational losses to catastrophic events:
 
 **Tier 1: Attritional Losses** (routine operational incidents)
+
 - Frequency: Poisson with mean = 21.38 × (Frequency Multiplier)
 - Severity: Lognormal with mean = \$40K, CV = 0.8
 - Examples: Equipment damage, minor workplace injuries, small property claims
 
 **Tier 2: Large Losses** (significant incidents)
+
 - Frequency: Poisson with mean = 1.5 × (Frequency Multiplier)
 - Severity: Lognormal with mean = \$500K, CV = 1.5
 - Examples: Major equipment failures, significant product recalls, material liability claims
 
 **Tier 3: Catastrophic Losses** (severe events)
+
 - Frequency: Poisson with mean = 0.15 × (Frequency Multiplier)
 - Severity: Pareto with minimum = \$5M, α = 2.5
 - Examples: Facility fires, large product liability events, major supply chain disruptions
 
 **Tier 4: Extreme Losses** (tail events beyond historical experience)
+
 - Threshold: 99.95th percentile of overall loss distribution
 - Severity: Generalized Pareto Distribution (GPD) calibrated to match catastrophic loss tail at the threshold, with stochastic shape parameter
 - Examples: Company-threatening scenarios with limited historical precedent
@@ -73,6 +78,7 @@ When losses exceed a sufficiently high threshold, **Extreme Value Theory (EVT)**
 - **Shape (ξ)**: Controls the tail thickness and fundamentally changes the distribution's behavior
 
 The shape parameter is critical for risk management:
+
 - **ξ < 0**: Bounded tail (losses cannot exceed a maximum value)
 - **ξ = 0**: Exponential tail (similar to normal distribution tails)
 - **ξ > 0**: Heavy tail with infinite support (no theoretical upper limit)
@@ -98,6 +104,7 @@ If you're familiar with Monte Carlo simulation, you know the standard approach: 
 In our 2D parameter space (frequency multiplier × tail shape), a standard Monte Carlo with 1,024 random draws might randomly cluster many samples in moderate scenarios (ξ ≈ 0.5-0.6) while leaving gaps in thin-tail regions (ξ < 0.3) or thick-tail regions (ξ > 0.8). Sobol sequences guarantee we explore thick, moderate, and thin tail scenarios in proportion to their probability from the start.
 
 **The practical impact**:
+
 - **Faster convergence**: Sobol-based simulations typically achieve comparable accuracy to pseudo-random Monte Carlo with 4-10x fewer parameter combinations
 - **Stable tail estimates**: 95th percentile VaR and CTE metrics show much less sampling noise, critical when presenting results to leadership
 - **Reproducibility**: Unlike random sampling, Sobol sequences are deterministic, meaning rerunning the analysis produces identical results
@@ -122,10 +129,12 @@ For each configuration, I ran 10,000 simulations for 25 years. Although this is 
 This framework makes several simplifying assumptions that warrant discussion:
 
 **Insurance Market Assumptions**:
+
 - **Uniform 60% loss ratio across all layers**: Real-world pricing shows variation by attachment point—excess layers typically have much lower loss ratios (often 30-40%) due to higher pricing uncertainty, reduced competition, and larger insurer margins. This assumption **understates the cost of high-limit programs** (they'd cost roughly 1.5-2x more with realistic excess layer pricing), which is a limitation of this analysis. However, the ergodic penalty from a single uninsured extreme loss is so severe that high limits would likely remain advantageous even at significantly higher cost, though the optimal limit level might be lower than \$1B.
 - **Perfect insurer knowledge**: We assume insurers can price to the "true" loss distribution, including extreme tail scenarios. Reality involves information asymmetry and margin for uncertainty.
 
 **Loss Model Assumptions**:
+
 - **Uncorrelated loss events**: Loss occurrences are independent. This understates scenarios where multiple claims arise from a single event (e.g., supply chain disruption causing multiple customer claims). Directional insights hold, but absolute magnitudes would differ with correlated losses.
 - **Deterministic revenue growth**: Revenue grows at a steady rate without volatility. Real companies face revenue uncertainty that correlates with loss exposure, which would amplify the value of insurance in economic downturns.
 - **No inflation or discounting**: We ignore both premium inflation and the time value of money. Including these would modestly favor higher deductibles (invest the premium savings) but wouldn't change the qualitative patterns.
@@ -195,6 +204,7 @@ The surfaces flatten dramatically along the deductible axis. **When tails are th
 **Why thin tails neutralize deductible choice**:
 
 With thin tails (ξ < 0.45), extreme losses decay rapidly. Looking at our loss severity structure:
+
 - Attritional losses: \$40K mean (far below any deductible)
 - Large losses: \$500K mean (comparable to mid-range deductibles)
 - Catastrophic losses: \$5M minimum with Pareto α=2.5
@@ -221,6 +231,7 @@ Notice how the surface plots show smooth gradients rather than noisy artifacts. 
 The real power of this approach isn't in these specific results; it's in the methodology you can adapt to your own situation.
 
 **What parameters are you most uncertain about?** For your company, it might not be tail shape. It could be:
+
 - Frequency trends in a changing risk environment, such as in cyber, climate, supply chain (stochasticize Frequency)
 - Correlation between different loss types during systemic events (stochasticize Frequency or Severity across layers)
 - The effectiveness of new risk controls whose impact isn't yet reflected in historical data (stochasticize Frequency or Severity of specific loss layers)
@@ -238,15 +249,18 @@ You don't need 100,000 simulations to get useful insights. Sobol sequences with 
 The complete implementation is available for you to modify and run:
 
 **Download the Code**:
+
 - [Jupyter Notebook — Stochastic Tail Simulations](https://github.com/AlexFiliakov/Ergodic-Insurance-Limits/blob/main/ergodic_insurance/notebooks/results_stoch_tail_sim_01/ergodicity_hier_tail_sim_parallel.ipynb)
 - [Python Script — Company and Loss Configuration](https://github.com/AlexFiliakov/Ergodic-Insurance-Limits/blob/main/ergodic_insurance/notebooks/results_stoch_tail_sim_01/run_hier_tail_sim_colab.py)
 
 **Install the Framework**:
+
 ```python
 !pip install --user --upgrade --force-reinstall git+https://github.com/AlexFiliakov/Ergodic-Insurance-Limits
 ```
 
 **Quick Start Guide**:
+
 1. Start with the example notebook to understand the structure
 2. Modify the company configuration to match your financials (lines 79-86 in the Python script)
 3. Adjust loss distributions to reflect your exposure (lines 98-102 for frequencies, 151-183 for severities)
@@ -254,6 +268,7 @@ The complete implementation is available for you to modify and run:
 5. Run locally with smaller simulation counts (1,000 sims) or on Google Colab for full-scale runs
 
 **Need Help?** The framework documentation includes:
+
 - [High-level overview and motivation](https://mostlyoptimal.com/)
 - [Research paper with mathematical details](https://mostlyoptimal.com/research)
 - [Tutorial for adapting to your use case](https://mostlyoptimal.com/tutorial)

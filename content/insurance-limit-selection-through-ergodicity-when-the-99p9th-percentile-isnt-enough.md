@@ -3,7 +3,7 @@ title: "01. Insurance Limit Selection Through Ergodicity: When the 99.9th Percen
 date: 2025-10-12
 ---
 
-![](images/2025_10_12_insurance_limit_selection/warehouse.webp)
+![Warehouse](images/2025_10_12_insurance_limit_selection/warehouse.webp)
 
 Photo by  [Vida Huang](https://unsplash.com/@rebylulu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)  on  [Unsplash](https://unsplash.com/photos/warehouse-storage-filled-with-pallets-of-goods-I-_wYj9yOzw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -21,7 +21,7 @@ This is why insurance limit selection matters more than most actuaries realize. 
 
 Traditional actuarial limit selection optimizes ensemble averages. But companies don’t operate across ensembles; they operate in time. This post explores how that distinction changes everything about optimal insurance limits.
 
-![](images/2025_10_12_insurance_limit_selection/basic_ergodicity_example.png)
+![Ensemble Average Overstates Real Performance](images/2025_10_12_insurance_limit_selection/basic_ergodicity_example.png)
 
 Your company’s individual experience is not the ensemble.
 
@@ -47,7 +47,7 @@ Each corporate configuration is tested across 250,000 scenarios, providing a rob
 
 ## Simulation Framework
 
-![](images/2025_10_12_insurance_limit_selection/policy_selection.webp)
+![Policy Selection](images/2025_10_12_insurance_limit_selection/policy_selection.webp)
 
 The framework builds on the methodology detailed in my research paper at  [mostlyoptimal.com/research](https://mostlyoptimal.com/research), which introduced a new open-source framework for ergodic insurance analysis, and then applied it to explore deductible selection. Here, I apply that framework to analyze insurance limits.
 
@@ -59,7 +59,7 @@ Revenue serves as the exposure base for all loss frequencies, scaling risk with 
 
 This four-tier approach captures the full spectrum from routine operational losses to true black swans, excepting loss correlations.
 
-![](images/2025_10_12_insurance_limit_selection/severity_histogram.png)
+![Severity Histogram](images/2025_10_12_insurance_limit_selection/severity_histogram.png)
 
 Resulting illustrative aggregate severity distribution, with orange highlighting the tail. Logarithmic x-axis.
 
@@ -75,8 +75,8 @@ Revenue is deterministic and proportional to assets, making net income stochasti
 
 The insurance structure consists of:
 
--   A per-occurrence deductible (held constant at \$500K for this analysis, but other deductibles don’t materially sway the analysis of limits)
--   A single per-occurrence limit (the variable under study)
+- A per-occurrence deductible (held constant at \$500K for this analysis, but other deductibles don’t materially sway the analysis of limits)
+- A single per-occurrence limit (the variable under study)
 
 **Insurance Pricing**
 
@@ -90,17 +90,17 @@ To maintain analytical clarity, I’ve removed time value of money effects, trea
 
 This framework makes several simplifying assumptions:
 
--   Uniform loss ratios across all insurance layers (reality would show varying margins by layer)
--   Perfect insurer knowledge of loss distributions
--   Uncorrelated loss events
--   Deterministic revenue growth
--   No inflation or discounting effects
+- Uniform loss ratios across all insurance layers (reality would show varying margins by layer)
+- Perfect insurer knowledge of loss distributions
+- Uncorrelated loss events
+- Deterministic revenue growth
+- No inflation or discounting effects
 
 These simplifications allow us to isolate the ergodic effects of limit selection, but they also mean  **these specific results do not generalize directly to real corporate structures**. However, the directional insights and underlying mechanisms should transfer to more complex scenarios, and the framework can be adapted to study individual cases.
 
 ## Understanding Tail Risk
 
-![](images/2025_10_12_insurance_limit_selection/whale_tail.webp)
+![Whale Tail](images/2025_10_12_insurance_limit_selection/whale_tail.webp)
 
 Before diving into results, we need to establish what “tail risk” means in this context.
 
@@ -128,20 +128,20 @@ The Shape parameter in our results controls tail thickness: higher Shape values 
 
 The visualization below shows annualized growth rates over 50 years plotted against per-occurrence insurance limits:
 
-![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_500k_threshold_0p0005_curated.png)
+![Time Average Growth for $500K Deductible](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_500k_threshold_0p0005_curated.png)
 
 ### Reading the Visualization
 
 The grid structure spans two key dimensions:
 
--   **Columns**  (left to right): Increasing initial capitalization from \$25M to \$150M
--   **Rows**  (top to bottom): Increasing tail thickness (Shape parameters 0.5, 0.7, and 0.9)
+- **Columns**  (left to right): Increasing initial capitalization from \$25M to \$150M
+- **Rows**  (top to bottom): Increasing tail thickness (Shape parameters 0.5, 0.7, and 0.9)
 
 Each subplot displays:
 
--   Distribution bands (shaded blue/purple regions) showing various percentiles (10th, 25th, 50th/median, 75th, 90th, 99th)
--   Navy color represents the region of the median
--   Red line with markers indicates the mean
+- Distribution bands (shaded blue/purple regions) showing various percentiles (10th, 25th, 50th/median, 75th, 90th, 99th)
+- Navy color represents the region of the median
+- Red line with markers indicates the mean
 
 **Exploring Sample Facets**
 
@@ -181,9 +181,9 @@ From an ensemble perspective (comparing many companies), lower limits look attra
 
 The relationship between company size and optimal limits is non-obvious but actuarially sound:
 
--   **\$25M capitalization**: Across all tail assumptions, limits in the \$350M-\$500M range appear optimal. These companies are vulnerable to mid-sized catastrophic events and need substantial coverage relative to their capital base.
--   **\$50M capitalization**: Tail assumptions become crucial. With thinner tails (Shape 0.5), limits around \$250M suffice. With thicker tails (Shape 0.9), optimal limits push toward \$500M or higher. The risk profile materially changes the calculus.
--   **\$75M-\$100M capitalization**: These larger companies show significant appetite for limits, especially under thick-tail scenarios. Optimal limits can rationally exceed \$500M.
+- **\$25M capitalization**: Across all tail assumptions, limits in the \$350M-\$500M range appear optimal. These companies are vulnerable to mid-sized catastrophic events and need substantial coverage relative to their capital base.
+- **\$50M capitalization**: Tail assumptions become crucial. With thinner tails (Shape 0.5), limits around \$250M suffice. With thicker tails (Shape 0.9), optimal limits push toward \$500M or higher. The risk profile materially changes the calculus.
+- **\$75M-\$100M capitalization**: These larger companies show significant appetite for limits, especially under thick-tail scenarios. Optimal limits can rationally exceed \$500M.
 
 This pattern aligns with the capital preservation logic: companies with higher capitalization have more to lose from extreme events.
 
@@ -211,10 +211,10 @@ This underscores a crucial point:  **tail risk assessment is not an academic exe
 
 The red line traces the mean annualized growth rate after 50 years and 250,000 scenarios. This trajectory reveals intuitive patterns:
 
--   Optimal limits increase with capitalization
--   Optimal limits increase with tail thickness
--   The rate of increase accelerates in the thick-tail scenarios
--   Even “small” companies with heavy tail exposures should consider surprisingly high limits
+- Optimal limits increase with capitalization
+- Optimal limits increase with tail thickness
+- The rate of increase accelerates in the thick-tail scenarios
+- Even “small” companies with heavy tail exposures should consider surprisingly high limits
 
 ## Key Insights & Implications
 
@@ -222,21 +222,21 @@ The red line traces the mean annualized growth rate after 50 years and 250,000 s
 
 Several insights from this analysis should transfer to more complex scenarios:
 
-1.  **The ergodic tradeoff is real**: Higher limits protect time-average growth at the expense of ensemble-average efficiency. This tradeoff exists regardless of specific assumptions.
-2.  **Capitalization drives limit appetite**: Larger companies rationally purchase higher limits to protect capital bases, even as they may self-insure smaller losses. This isn’t about risk aversion; it’s about preserving optionality for future growth.
-3.  **Tail uncertainty matters enormously**: Small changes in tail assumptions drive significant changes in optimal limits. Companies uncertain about their tail exposure should err toward higher coverage.
-4.  **The value of limits compounds over time**: The 50-year horizon reveals cumulative effects that single-period analysis misses. A “slightly suboptimal” limit selection can compound into substantially different growth trajectories.
+1. **The ergodic tradeoff is real**: Higher limits protect time-average growth at the expense of ensemble-average efficiency. This tradeoff exists regardless of specific assumptions.
+2. **Capitalization drives limit appetite**: Larger companies rationally purchase higher limits to protect capital bases, even as they may self-insure smaller losses. This isn’t about risk aversion; it’s about preserving optionality for future growth.
+3. **Tail uncertainty matters enormously**: Small changes in tail assumptions drive significant changes in optimal limits. Companies uncertain about their tail exposure should err toward higher coverage.
+4. **The value of limits compounds over time**: The 50-year horizon reveals cumulative effects that single-period analysis misses. A “slightly suboptimal” limit selection can compound into substantially different growth trajectories.
 
 ### What Doesn’t Generalize
 
 These specific results depend heavily on the configuration choices:
 
--   The tail assumptions
--   The \$500K deductible assumption
--   The 60% uniform loss ratio
--   The deterministic revenue model
--   The absence of loss correlations
--   The present-value simplification
+- The tail assumptions
+- The \$500K deductible assumption
+- The 60% uniform loss ratio
+- The deterministic revenue model
+- The absence of loss correlations
+- The present-value simplification
 
 Real companies facing real insurance decisions need to model their specific exposure profiles, capital structures, and risk appetites. These results provide directional guidance, not prescriptive answers.
 
@@ -244,32 +244,32 @@ Real companies facing real insurance decisions need to model their specific expo
 
 This analysis suggests several shifts in how we might approach limit selection:
 
-1.  **Time horizons matter**: Evaluating limits over multi-decade horizons rather than single policy periods reveals different optimal choices. Strategic insurance buying should reflect strategic time horizons.
-2.  **Two distribution moments aren’t enough**: Mean and variance don’t fully capture tail dynamics. Actuaries need to engage seriously with distribution shape, particularly in the tails.
-3.  **Capital structure integration**: Limit selection shouldn’t happen in isolation from capital planning. The optimal insurance program depends fundamentally on balance sheet structure and growth objectives.
-4.  **Ensemble thinking can mislead**: Traditional actuarial methods that focus on expected values across portfolios can produce poor guidance for individual entity decisions under tail risk.
+1. **Time horizons matter**: Evaluating limits over multi-decade horizons rather than single policy periods reveals different optimal choices. Strategic insurance buying should reflect strategic time horizons.
+2. **Two distribution moments aren’t enough**: Mean and variance don’t fully capture tail dynamics. Actuaries need to engage seriously with distribution shape, particularly in the tails.
+3. **Capital structure integration**: Limit selection shouldn’t happen in isolation from capital planning. The optimal insurance program depends fundamentally on balance sheet structure and growth objectives.
+4. **Ensemble thinking can mislead**: Traditional actuarial methods that focus on expected values across portfolios can produce poor guidance for individual entity decisions under tail risk.
 
 ## Limitations & Future Research
 
 This analysis represents an early iteration of the framework. Several enhancements would make it production-ready:
 
--   **Layered loss ratios**: Different insurance layers typically carry different margins. High excess layers often have lower loss ratios than primary layers due to basis risk and data uncertainty.
--   **Time value of money**: Incorporating proper discounting and inflation would affect the relative value of premium expenditure versus loss protection.
--   **Loss correlations**: Many catastrophic events trigger multiple loss types simultaneously. Correlation structures likely increase the value of high limits.
--   **Stochastic revenue**: Allowing revenue to vary with economic cycles, competitive dynamics, and recovery from losses would create additional interactions with insurance strategy.
--   **GPU parallelization**: The 250,000 scenarios per configuration are computationally intensive. GPU acceleration would enable faster iteration and more complex models.
+- **Layered loss ratios**: Different insurance layers typically carry different margins. High excess layers often have lower loss ratios than primary layers due to basis risk and data uncertainty.
+- **Time value of money**: Incorporating proper discounting and inflation would affect the relative value of premium expenditure versus loss protection.
+- **Loss correlations**: Many catastrophic events trigger multiple loss types simultaneously. Correlation structures likely increase the value of high limits.
+- **Stochastic revenue**: Allowing revenue to vary with economic cycles, competitive dynamics, and recovery from losses would create additional interactions with insurance strategy.
+- **GPU parallelization**: The 250,000 scenarios per configuration are computationally intensive. GPU acceleration would enable faster iteration and more complex models.
 
 Beyond technical enhancements, several research questions emerge:
 
--   What does the demand side of the limits look like under layered insurance structures? What is the surface of optimal limits when varying loss ratios?
--   Can we identify heuristics or decision rules that approximate optimal limit decisions without complete tail modeling?
--   How do these dynamics change with infinite-variance distributions (Generalized Pareto with Shape of 1.0+)?
+- What does the demand side of the limits look like under layered insurance structures? What is the surface of optimal limits when varying loss ratios?
+- Can we identify heuristics or decision rules that approximate optimal limit decisions without complete tail modeling?
+- How do these dynamics change with infinite-variance distributions (Generalized Pareto with Shape of 1.0+)?
 
 My immediate next research focus will explore tail thickness more deeply and investigate layered loss ratio structures that better reflect real insurance markets.
 
 ## Final Thoughts
 
-![](images/2025_10_12_insurance_limit_selection/boardroom.webp)
+![Boardroom](images/2025_10_12_insurance_limit_selection/boardroom.webp)
 
 > **Insurance limits protect time-average growth trajectories from tail events that can permanently impair corporate prospects.**
 
@@ -293,7 +293,7 @@ I simulated a lot more configurations than I presented in this article, so I’m
 
 This contains the graphs we explored earlier, plus a few more:
 
-![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_500_threshold_0p0005.png)
+![Time Average Growth for $500K Deductible](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_500_threshold_0p0005.png)
 
 In the bottom-right corner, you can see that certain heavy-tailed assumptions imply that low coverage limits deteriorate median performance, not just the mean, at higher initial capitalizations where there is significant liability exposure.
 
@@ -301,17 +301,17 @@ In the bottom-right corner, you can see that certain heavy-tailed assumptions im
 
 This represents configurations above at a lower deductible:
 
-![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_250_threshold_0p0005.png)
+![Time Average Growth for $250K Deductible](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_250_threshold_0p0005.png)
 
 ### \$500K Deductible with More Dense Extreme Losses
 
 In these configurations, the extreme tail attaches at a higher threshold, resulting in denser extreme losses.
 
-![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_500_threshold_0p0001.png)
+![Time Average Growth for $500K Deductible](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_500_threshold_0p0001.png)
 
 ### \$250K Deductible with More Dense Extreme Losses
 
-![](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_250_threshold_0p0001.png)
+![Time Average Growth for $250K Deductible](images/2025_10_12_insurance_limit_selection/time_average_growth_ded_250_threshold_0p0001.png)
 
 ### t-SNE Plot of Results
 
@@ -319,9 +319,9 @@ t-SNE maps high-dimensional data to 2 or 3 dimensions by ensuring that similar o
 
 Each point on the plot below is a different scenario configuration and represents 250,000 simulations over 50 years. The t-SNE algorithm was used to automatically group these results into coherent collections, although it’s not apparent what each island represents.
 
--   The tombolo on the left side of the plot appears to be a bridge of high-limit and heavy-tail configurations that fare poorly by average measures, but who are reasonably well protected in the worst cases.
--   The island on the bottom-right represents scenarios without insurance.
--   The island on the top-left represents configurations with the thinnest tail (no GPD attachment).
+- The tombolo on the left side of the plot appears to be a bridge of high-limit and heavy-tail configurations that fare poorly by average measures, but who are reasonably well protected in the worst cases.
+- The island on the bottom-right represents scenarios without insurance.
+- The island on the top-left represents configurations with the thinnest tail (no GPD attachment).
 
 ![t-SNE visualization of all configurations.](images/2025_10_12_insurance_limit_selection/t_sne.gif)
 

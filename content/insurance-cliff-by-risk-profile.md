@@ -19,6 +19,7 @@ At some point, higher limits don't matter much because losses don't get large en
 But in the active tail of modeled losses, where your business operates, the choice of limits has a disproportionate effect on results.
 
 Here's what this looks like for a sample company with \$10M in capital:
+
 - Risk Seeking (2.5% bankruptcy risk): \$20M policy limit
 - Risk Neutral (1% bankruptcy risk): \$60M policy limit
 - Risk Averse (0.5% bankruptcy risk): \$120M policy limit
@@ -85,6 +86,7 @@ The analytical rigor exists on one side of the transaction but not the other.
 ## Beyond Risk of Ruin
 
 Understanding the cliff is just the beginning. There are at least four dimensions to consider:
+
 - Optimization for bankruptcy risk
 - Optimization in the lower tails of growth
 - Optimization for mean growth
@@ -100,7 +102,7 @@ When optimizing for mean growth, there's more consideration of the downside, but
 
 This is the multi-dimensional optimization most companies aren't explicitly managing.
 
-# What This Means for You
+## What This Means for You
 
 **If you're on the carrier side:** View risks on a multi-year basis rather than managing a single renewal period at a time. Recognize lifetime business value and advise your customers accordingly.
 
@@ -122,17 +124,17 @@ That's the difference between managing insurance as a cost center and leveraging
 
 The complete implementation is available for you to modify and run:
 
-### Download the Code:
+### Download the Code
 
 - [Jupyter Notebook — Stochastic Tail Simulations](https://github.com/AlexFiliakov/Ergodic-Insurance-Limits/blob/main/ergodic_insurance/notebooks/results_limit_ror_cliff/ergodicity_limit_ror_cliff.ipynb)
 
 - [Python Script — Company and Loss Configuration](https://github.com/AlexFiliakov/Ergodic-Insurance-Limits/blob/main/ergodic_insurance/notebooks/results_limit_ror_cliff/run_limit_ror_cliff_colab.py)
 
-### Install the Framework:
+### Install the Framework
 
 `!pip install --user --upgrade --force-reinstall git+https://github.com/AlexFiliakov/Ergodic-Insurance-Limits`
 
-### Quick Start Guide:
+### Quick Start Guide
 
 1. Start with the example notebook to understand the structure
 
@@ -159,6 +161,7 @@ The framework documentation includes:
 ### Company Configuration
 
 I used the following company assumptions across all simulations, which can be further tailored to a specific business:
+
 - Asset Turnover Ratio: 1.0 (Revenue = Assets * Turnover)
 - EBITA Before Claims and Insurance: 15%
 - Tax Rate: 25%
@@ -175,21 +178,25 @@ Bankruptcy had two forms: the first is having assets fall below a threshold of \
 The simulation employed a four-tier loss structure that captures the full spectrum from routine operational losses to catastrophic events, undifferentiated by nature of loss (so Workers' Compensation, Property, Cyber, etc. were all combined into a single loss structure):
 
 **Tier 1: Attritional Losses** (routine operational incidents)
+
 - Frequency: Poisson varying with revenue
 - Severity: Lognormal
 - Examples: Equipment damage, minor workplace injuries, small property claims
 
 **Tier 2: Large Losses** (significant incidents)
+
 - Frequency: Poisson varying with revenue
 - Severity: Lognormal
 - Examples: Major equipment failures, significant product recalls, material liability claims
 
 **Tier 3: Catastrophic Losses** (severe events)
+
 - Frequency: Poisson varying with revenue
 - Severity: Pareto
 - Examples: Facility fires, large product liability events, major supply chain disruptions
 
 **Tier 4: Extreme Losses** (tail events beyond historical experience)
+
 - Threshold: 99.95th percentile of overall loss distribution
 - Severity: Generalized Pareto Distribution (GPD)
 - Examples: Company-threatening scenarios with limited historical precedent, such as nuclear verdicts
