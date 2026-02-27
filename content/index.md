@@ -18,17 +18,19 @@ Whether you're evaluating catastrophic coverage limits, optimizing risk retentio
 
 The Python package enables you to adapt these analyses to your organization's specific risk profile and constraints.
 
-## Explore the Applications
+## The Series
 
-### Static Operational Volatility
+Start at the top and work down. Each post builds on the last, and the notebooks are freely available at the end of each so you can adapt the analysis to your own book of business.
 
-The following applications all consist of simulations without operational volatility. The notebooks are freely available at the end of each blog post, so you can adapt these configurations to your own needs.
+1. **[Insurance Limit Selection Through Ergodicity](insurance-limit-selection-through-ergodicity-when-the-99p9th-percentile-isnt-enough.md)**: The foundation. Why the 99.9th percentile isn’t enough, and what happens when you evaluate insurance limits over 50-year horizons instead of single policy periods.
 
-- [Insurance Limit Selection Through Ergodicity](insurance-limit-selection-through-ergodicity-when-the-99p9th-percentile-isnt-enough.md) Insurance limit selection, viewed through an ergodic lens, reveals patterns that traditional actuarial analysis can miss. The tradeoff between median and mean performance, the interaction between capitalization and limit appetite, and the amplifying effects of tail thickness all emerge clearly from long-term simulation.
+2. **[Stochasticizing Tail Uncertainty With Sobol Sequences](stochasticizing-tail-risk.md)**: You don’t know your tail shape. Nobody does. This post makes that uncertainty explicit, sweeping 25,000 insurance configurations across 1,000 tail scenarios to find the patterns that only emerge when you stop pretending you have a point estimate.
 
-- [Stochasticizing Tail Uncertainty With Sobol Sequences](stochasticizing-tail-risk.md) This article demonstrates an approach to stochasticizing the parameters we’re most uncertain about, specifically the frequency multiplier and extreme loss tail shape, and exploring the full outcome space across insurance program designs. We use Sobol sequences (quasi-random sampling) to efficiently cover this high-dimensional uncertainty space, then analyze how nearly 25,000 insurance program configurations perform under 1,000 different tail scenarios.
+3. **[The Insurance Cliff](insurance-cliff-by-risk-profile.md)**: Plot capital against limits against bankruptcy risk and you don’t get a gentle slope. You get a cliff. Most executives have no idea where they’re standing on it.
 
-- [The Insurance Cliff](insurance-cliff-by-risk-profile.md) When you plot the relationship between initial capital, policy limits, and bankruptcy risk, you don’t get a gentle slope. You get a cliff. In the active tail of modeled losses, where your business operates, the choice of limits has a disproportionate effect on results.
+4. **[Volatility Drag vs Premium Drag](volatility-drag-vs-premium-drag.md)**: Every deductible decision is a tug-of-war between two forces: the cost of premium eating into capital and the cost of variance destroying compounding power. The chart that changed my understanding of why insurance works even when it’s actuarially "unfair."
+
+5. **[Risk Measures Under Catastrophic Tail Variation: VaR vs CTE](risk-measures-under-cat-tail.md)**: I broke a loss distribution’s variance and the industry-standard risk metric barely noticed. VaR increased 1.3x. CTE more than doubled. The shaded region between those curves is the tail risk your capital model can’t see.
 
 ## Learn the Framework
 
