@@ -34,6 +34,8 @@ Start at the top and work down. Each post builds on the last, and the notebooks 
 
 6. **[Exploring Expectiles: A Unified Risk Measure Under Tail Variation](exploring-expectiles.md)**: VaR is backtestable but not coherent. CTE is coherent but not backtestable. Expectiles are the only law-invariant risk measure that gives you both, and they’re 5x more responsive to tail thickening than VaR.
 
+7. **[Loss Severity Estimation and the Shadow Mean](severity-estimation.md)**: Your severity model is only as good as the data behind it. With five years of company history, the catastrophic tail is essentially invisible. This post uses the Hill estimator with industry data to recover the true distribution and eliminate the shadow mean that hides in naive estimates.
+
 ## Learn the Framework
 
 What started as a quick Excel model (“can I derive rational insurance prices under ergodic theory?”) quickly outgrew the spreadsheet. I moved to Python, built a simulation framework, wrote a research paper, and kept going. After hundreds of hours of development, Mostly Optimal emerged: an open-source engine for modeling how individual businesses actually grow, fail, and navigate uncertainty over time.
