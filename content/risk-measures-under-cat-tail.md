@@ -78,16 +78,14 @@ $$g \approx \mu_{\text{arith}} - \frac{\sigma^2}{2}$$
 
 **Premium drag** reduces the arithmetic mean $\mu$ through the direct cost of insurance. **Volatility drag** penalizes growth through $\sigma^2/2$, the quadratic penalty that separates geometric from arithmetic compounding. The optimal deductible sits where the marginal premium savings from retaining more risk exactly equal the marginal volatility cost.
 
-The VaR vs CTE comparison reveals which risk measure actually captures the force that matters.
+The VaR vs CTE comparison reveals which risk measure actually captures the force that matters most for long-term compounding.
 
-**VaR tracks the frequency of bad outcomes.** It tells you how often losses exceed a threshold. This maps loosely onto premium drag: insurers price policies partly based on expected loss frequency above the attachment point, and VaR at the attachment quantile influences that pricing.
-
-**CTE tracks the severity of bad outcomes.** It tells you the average magnitude of destruction in the tail. This maps directly onto volatility drag: it is the *size* of the losses, not just their occurrence, that drives the variance of equity returns and the resulting $\sigma^2/2$ penalty on compounding growth.
+Volatility drag is driven by the *magnitude* of retained losses. It is the size of the hits to equity, not just their frequency, that inflates $\sigma^2$ and penalizes compounding growth. VaR, as a pure quantile, is structurally blind to magnitude. It tells you how often losses exceed a threshold, but nothing about how bad they are when they do. CTE responds directly to loss severity in the tail.
 
 When the catastrophic tail thickens from $\alpha = 3.0$ to $\alpha = 1.5$:
 
-- The frequency dimension (VaR) increases modestly, suggesting the premium impact is manageable.
-- The severity dimension (CTE) more than doubles, signaling that the volatility drag has grown dramatically.
+- VaR increases by 1.3x. It detects a modest shift in the quantile, but misses the redistribution of mass above it.
+- CTE more than doubles at 2.3x. It captures the growing severity that drives the $\sigma^2/2$ penalty on compounding growth.
 
 A risk manager relying solely on VaR would see a 30% increase in the 99.5th percentile loss and might conclude the program needs modest adjustment. CTE reveals the actual exposure: the average loss *conditional on being in the tail* has more than doubled, which means the volatility drag on long-term compounding has intensified far more than the VaR signal implies.
 
