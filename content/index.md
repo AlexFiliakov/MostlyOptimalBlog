@@ -32,6 +32,8 @@ Start at the top and work down. Each post builds on the last, and the notebooks 
 
 5. **[Risk Measures Under Catastrophic Tail Variation: VaR vs CTE](risk-measures-under-cat-tail.md)**: I broke a loss distribution’s variance and the industry-standard risk metric barely noticed. VaR increased 1.3x. CTE more than doubled. The shaded region between those curves is the tail risk your capital model can’t see.
 
+6. **[Exploring Expectiles: A Unified Risk Measure Under Tail Variation](exploring-expectiles.md)**: VaR is backtestable but not coherent. CTE is coherent but not backtestable. Expectiles are the only law-invariant risk measure that gives you both, and they’re 5x more responsive to tail thickening than VaR.
+
 ## Learn the Framework
 
 What started as a quick Excel model (“can I derive rational insurance prices under ergodic theory?”) quickly outgrew the spreadsheet. I moved to Python, built a simulation framework, wrote a research paper, and kept going. After hundreds of hours of development, Mostly Optimal emerged: an open-source engine for modeling how individual businesses actually grow, fail, and navigate uncertainty over time.
