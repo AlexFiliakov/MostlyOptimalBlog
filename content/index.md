@@ -38,6 +38,8 @@ Start at the top and work down. Each post builds on the last, and the notebooks 
 
 8. **[Exploring Volatility: Optimal Deductibles Under Dual Uncertainty](all-about-volatility.md)**: Companies face volatility from multiple directions simultaneously. This post sweeps 10,000 joint scenarios across loss volatility and operational volatility to map how optimal deductibles shift across a two-dimensional uncertainty space, revealing a counterintuitive pattern at the extremes.
 
+9. **[The Objective Frontier: Why There Is No Single Right Deductible](objective-frontier.md)**: Ask a broker, an actuary, and a CFO for the "right" deductible and you'll get three different numbers. Frame it as multi-objective optimization, and the defensible range of retentions is far narrower than most renewal conversations suggest.
+
 ## Learn the Framework
 
 What started as a quick Excel model (“can I derive rational insurance prices under ergodic theory?”) quickly outgrew the spreadsheet. I moved to Python, built a simulation framework, wrote a research paper, and kept going. After hundreds of hours of development, Mostly Optimal emerged: an open-source engine for modeling how individual businesses actually grow, fail, and navigate uncertainty over time.
