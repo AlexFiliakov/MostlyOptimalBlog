@@ -46,6 +46,12 @@ What started as a quick Excel model (“can I derive rational insurance prices u
 
 [mostlyoptimal.com/research](https://mostlyoptimal.com/research)  includes a research paper that describes the framework in some detail.
 
+**Install the Framework**:
+
+```python
+!pip install --user --upgrade --force-reinstall ergodic-insurance
+```
+
 ---
 
 *Additional applications will be added regularly as we explore new use cases and risk scenarios.*
