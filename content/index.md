@@ -40,6 +40,8 @@ Start at the top and work down. Each post builds on the last, and the notebooks 
 
 9. **[The Objective Frontier: Why There Is No Single Right Deductible](objective-frontier.md)**: Ask a broker, an actuary, and a CFO for the "right" deductible and you'll get three different numbers. Frame it as multi-objective optimization, and the defensible range of retentions is far narrower than most renewal conversations suggest.
 
+10. **[The Decision Cloud: How Severity Assumptions Reshape Optimal Retention](objectives-and-loss-volatility.md)**: The Objective Frontier assumed fixed loss severity. This post stress-tests that assumption by sweeping 100 draws from a Bayesian prior on large-loss variability. The result is a three-dimensional decision surface with a surprising shape: at both extremes of loss volatility, optimal retention rises.
+
 ## Learn the Framework
 
 What started as a quick Excel model (“can I derive rational insurance prices under ergodic theory?”) quickly outgrew the spreadsheet. I moved to Python, built a simulation framework, wrote a research paper, and kept going. After hundreds of hours of development, Mostly Optimal emerged: an open-source engine for modeling how individual businesses actually grow, fail, and navigate uncertainty over time.
