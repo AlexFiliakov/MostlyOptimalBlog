@@ -123,5 +123,5 @@ The full analysis, including the severity simulation, Hill estimation, naive com
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall ergodic-insurance
+pip install ergodic-insurance
 ```

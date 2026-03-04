@@ -181,5 +181,5 @@ The companion research document provides a deeper mathematical treatment:
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall ergodic-insurance
+pip install ergodic-insurance
 ```

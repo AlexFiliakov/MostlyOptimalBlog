@@ -256,7 +256,7 @@ The complete implementation is available for you to modify and run:
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall ergodic-insurance
+pip install ergodic-insurance
 ```
 
 **Quick Start Guide**:

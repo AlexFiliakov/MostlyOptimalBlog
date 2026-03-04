@@ -127,5 +127,5 @@ The full analysis, including all simulation parameters, the 100x100 expectile gr
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall ergodic-insurance
+pip install ergodic-insurance
 ```

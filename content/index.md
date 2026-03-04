@@ -2,61 +2,62 @@
 title: Applications of the Python Package
 ---
 
-Welcome to the Mostly Optimal Applications of the `Ergodic-Insurance-Limits` Python package, designed to help risk professionals make more informed decisions about insurance coverage limits and risk retention strategies.
-
-## What You'll Find Here
-
-These applications demonstrate how ergodic optimization principles can be applied to real-world insurance and risk management challenges. Each application includes:
-
-- **Interactive analysis** using realistic data and scenarios
-- **Quantitative frameworks** for evaluating insurance decisions beyond traditional risk metrics
-- **Practical insights** for professionals navigating complex coverage decisions
-
-## For Risk Professionals
-
-Whether you're evaluating catastrophic coverage limits, optimizing risk retention strategies, or challenging conventional wisdom about "adequate" insurance levels, these applications provide a rigorous, time-average perspective on insurance decision-making.
-
-The Python package enables you to adapt these analyses to your organization's specific risk profile and constraints.
-
-## The Series
-
-Start at the top and work down. Each post builds on the last, and the notebooks are freely available at the end of each so you can adapt the analysis to your own book of business.
-
-1. **[Insurance Limit Selection Through Ergodicity](insurance-limit-selection-through-ergodicity-when-the-99p9th-percentile-isnt-enough.md)**: The foundation. Why the 99.9th percentile isn’t enough, and what happens when you evaluate insurance limits over 50-year horizons instead of single policy periods.
-
-2. **[Stochasticizing Tail Uncertainty With Sobol Sequences](stochasticizing-tail-risk.md)**: You don’t know your tail shape. Nobody does. This post makes that uncertainty explicit, sweeping 25,000 insurance configurations across 1,000 tail scenarios to find the patterns that only emerge when you stop pretending you have a point estimate.
-
-3. **[The Insurance Cliff](insurance-cliff-by-risk-profile.md)**: Plot capital against limits against bankruptcy risk and you don’t get a gentle slope. You get a cliff. Most executives have no idea where they’re standing on it.
-
-4. **[Volatility Drag vs Premium Drag](volatility-drag-vs-premium-drag.md)**: Every deductible decision is a tug-of-war between two forces: the cost of premium eating into capital and the cost of variance destroying compounding power. The chart that changed my understanding of why insurance works even when it’s actuarially "unfair."
-
-5. **[Risk Measures Under Catastrophic Tail Variation: VaR vs CTE](risk-measures-under-cat-tail.md)**: I broke a loss distribution’s variance and the industry-standard risk metric barely noticed. VaR increased 1.3x. CTE more than doubled. The shaded region between those curves is the tail risk your capital model can’t see.
-
-6. **[Exploring Expectiles: A Unified Risk Measure Under Tail Variation](exploring-expectiles.md)**: VaR is backtestable but not coherent. CTE is coherent but not backtestable. Expectiles are the only law-invariant risk measure that gives you both, and they’re 5x more responsive to tail thickening than VaR.
-
-7. **[Loss Severity Estimation and the Shadow Mean](severity-estimation.md)**: Your severity model is only as good as the data behind it. With five years of company history, the catastrophic tail is essentially invisible. This post uses the Hill estimator with industry data to recover the true distribution and eliminate the shadow mean that hides in naive estimates.
-
-8. **[Exploring Volatility: Optimal Deductibles Under Dual Uncertainty](all-about-volatility.md)**: Companies face volatility from multiple directions simultaneously. This post sweeps 10,000 joint scenarios across loss volatility and operational volatility to map how optimal deductibles shift across a two-dimensional uncertainty space, revealing a counterintuitive pattern at the extremes.
-
-9. **[The Objective Frontier: Why There Is No Single Right Deductible](objective-frontier.md)**: Ask a broker, an actuary, and a CFO for the "right" deductible and you'll get three different numbers. Frame it as multi-objective optimization, and the defensible range of retentions is far narrower than most renewal conversations suggest.
-
-10. **[The Decision Cloud: How Severity Assumptions Reshape Optimal Retention](objectives-and-loss-volatility.md)**: The Objective Frontier assumed fixed loss severity. This post stress-tests that assumption by sweeping 100 draws from a Bayesian prior on large-loss variability. The result is a three-dimensional decision surface with a surprising shape: at both extremes of loss volatility, optimal retention rises.
-
-11. **[When Variance Doesn't Exist: Infinite Moments and the Limits of Classical Insurance Analytics](infinite-moments.md)**: Standard deviation may be an artifact of sample size, not a property of the risk. When the Pareto tail index $\alpha$ drops below 2, variance ceases to exist. Below 1, even the mean is undefined. This post explores where these regimes arise across real insurance lines, from cyber ($\alpha < 1$) to natural catastrophe ($\alpha \approx 1.4$), and what breaks when classical tools meet infinite moments.
+Welcome to applications of the `Ergodic-Insurance` Python package, designed to help risk professionals make more informed decisions about insurance coverage limits and risk retention strategies.
 
 ## Learn the Framework
 
-What started as a quick Excel model (“can I derive rational insurance prices under ergodic theory?”) quickly outgrew the spreadsheet. I moved to Python, built a simulation framework, wrote a research paper, and kept going. After hundreds of hours of development, Mostly Optimal emerged: an open-source engine for modeling how individual businesses actually grow, fail, and navigate uncertainty over time.
+[mostlyoptimal.com/tutorial](https://mostlyoptimal.com/tutorial) — a guide to get started applying the framework to your specific use cases.
 
-[mostlyoptimal.com/tutorial](https://mostlyoptimal.com/tutorial)  consists of a guide to get started in applying the framework to your specific use cases.
-
-[mostlyoptimal.com/research](https://mostlyoptimal.com/research)  includes a research paper that describes the framework in some detail.
+[mostlyoptimal.com/research](https://mostlyoptimal.com/research) — a research paper describing the framework in detail.
 
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall ergodic-insurance
+pip install ergodic-insurance
 ```
+
+## Start Here
+
+Short on time? These three posts give you the core argument. Read them in order.
+
+1. **[Insurance Limit Selection Through Ergodicity](insurance-limit-selection-through-ergodicity-when-the-99p9th-percentile-isnt-enough.md)** — The foundation: why time-average growth changes everything about limit selection.
+2. **[Volatility Drag vs Premium Drag](volatility-drag-vs-premium-drag.md)** — The core insight: why insurance works even when it’s actuarially “unfair.”
+3. **[The Objective Frontier](objective-frontier.md)** — The practical payoff: multi-objective optimization narrows the defensible deductible range.
+
+## All Posts by Topic
+
+Each post includes a downloadable notebook so you can adapt the analysis to your own business.
+
+### The Ergodic Foundation
+
+Why your company’s single trajectory through time behaves nothing like the industry average, and where classical statistics breaks down entirely.
+
+- **[Insurance Limit Selection Through Ergodicity](insurance-limit-selection-through-ergodicity-when-the-99p9th-percentile-isnt-enough.md)** — Why the 99.9th percentile isn’t enough over 50-year horizons.
+- **[When Variance Doesn’t Exist: Infinite Moments](infinite-moments.md)** — Where Pareto $\alpha$ drops below 2, standard deviation is an artifact of sample size, not a property of the risk.
+
+### Loss Modeling and Tail Uncertainty
+
+Your severity model is only as good as the data behind it. These posts address estimation under scarce data and deep tail uncertainty.
+
+- **[Loss Severity Estimation and the Shadow Mean](severity-estimation.md)** — Five years of company history can’t see the catastrophic tail; the Hill estimator with industry data recovers what’s hiding.
+- **[Stochasticizing Tail Uncertainty With Sobol Sequences](stochasticizing-tail-risk.md)** — Nobody knows their tail shape; sweep 25,000 configurations across 1,000 tail scenarios to find the patterns.
+
+### Risk Measurement
+
+Standard risk metrics miss the tail. These posts show why, and what to use instead.
+
+- **[VaR vs CTE Under Catastrophic Tail Variation](risk-measures-under-cat-tail.md)** — Break a distribution’s variance and VaR barely notices; CTE more than doubles.
+- **[Exploring Expectiles](exploring-expectiles.md)** — The only law-invariant risk measure that is both coherent and backtestable, and 5x more responsive to tail thickening than VaR.
+
+### Deductible and Retention Optimization
+
+From the mechanics of volatility drag to multi-objective frontiers, these posts build a complete framework for retention decisions.
+
+- **[Volatility Drag vs Premium Drag](volatility-drag-vs-premium-drag.md)** — The tug-of-war between premium cost and variance destroying compounding power.
+- **[The Insurance Cliff](insurance-cliff-by-risk-profile.md)** — Capital vs. limits vs. bankruptcy risk doesn’t form a gentle slope; it’s a cliff.
+- **[Exploring Volatility: Optimal Deductibles Under Dual Uncertainty](all-about-volatility.md)** — Operational volatility drives optimal deductible 5x more than loss volatility.
+- **[The Objective Frontier](objective-frontier.md)** — Frame deductible selection as multi-objective optimization and the defensible range is far narrower than most renewal conversations suggest.
+- **[The Decision Cloud](objectives-and-loss-volatility.md)** — Stress-test the frontier under Bayesian severity uncertainty; at both extremes of loss volatility, optimal retention rises.
 
 ---
 

@@ -131,5 +131,5 @@ The full Pareto frontier analysis, including all simulation parameters, dominanc
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall ergodic-insurance
+pip install ergodic-insurance
 ```

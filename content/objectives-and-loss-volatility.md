@@ -97,5 +97,5 @@ The full sensitivity analysis, including the Gamma prior, Bayesian decision clou
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall ergodic-insurance
+pip install ergodic-insurance
 ```

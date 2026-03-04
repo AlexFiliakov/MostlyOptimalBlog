@@ -338,7 +338,7 @@ You need both of these to run, plus run the following in a virtual environment t
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall ergodic-insurance
+pip install ergodic-insurance
 ```
 
 ## Read About the Framework

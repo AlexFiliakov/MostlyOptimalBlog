@@ -108,5 +108,5 @@ The full analysis, including Sobol sequence generation, inverse Gaussian priors,
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall ergodic-insurance
+pip install ergodic-insurance
 ```

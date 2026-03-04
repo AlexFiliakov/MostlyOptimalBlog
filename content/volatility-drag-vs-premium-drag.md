@@ -101,5 +101,5 @@ The full analysis, including all simulation parameters, mathematical derivations
 **Install the Framework**:
 
 ```python
-!pip install --user --upgrade --force-reinstall ergodic-insurance
+pip install ergodic-insurance
 ```
