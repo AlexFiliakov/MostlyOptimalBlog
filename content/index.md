@@ -42,6 +42,8 @@ Start at the top and work down. Each post builds on the last, and the notebooks 
 
 10. **[The Decision Cloud: How Severity Assumptions Reshape Optimal Retention](objectives-and-loss-volatility.md)**: The Objective Frontier assumed fixed loss severity. This post stress-tests that assumption by sweeping 100 draws from a Bayesian prior on large-loss variability. The result is a three-dimensional decision surface with a surprising shape: at both extremes of loss volatility, optimal retention rises.
 
+11. **[When Variance Doesn't Exist: Infinite Moments and the Limits of Classical Insurance Analytics](infinite-moments.md)**: Standard deviation may be an artifact of sample size, not a property of the risk. When the Pareto tail index $\alpha$ drops below 2, variance ceases to exist. Below 1, even the mean is undefined. This post explores where these regimes arise across real insurance lines, from cyber ($\alpha < 1$) to natural catastrophe ($\alpha \approx 1.4$), and what breaks when classical tools meet infinite moments.
+
 ## Learn the Framework
 
 What started as a quick Excel model (“can I derive rational insurance prices under ergodic theory?”) quickly outgrew the spreadsheet. I moved to Python, built a simulation framework, wrote a research paper, and kept going. After hundreds of hours of development, Mostly Optimal emerged: an open-source engine for modeling how individual businesses actually grow, fail, and navigate uncertainty over time.
