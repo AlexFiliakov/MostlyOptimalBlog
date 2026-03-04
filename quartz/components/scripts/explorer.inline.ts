@@ -79,6 +79,12 @@ function toggleFolder(evt: MouseEvent) {
   localStorage.setItem("fileTree", stringifiedFileTree)
 }
 
+function formatExplorerDate(dateStr: string): string {
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  const d = new Date(dateStr)
+  return `${months[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`
+}
+
 function createFileNode(currentSlug: FullSlug, node: FileTrieNode): HTMLLIElement {
   const template = document.getElementById("template-file") as HTMLTemplateElement
   const clone = template.content.cloneNode(true) as DocumentFragment
@@ -86,7 +92,17 @@ function createFileNode(currentSlug: FullSlug, node: FileTrieNode): HTMLLIElemen
   const a = li.querySelector("a") as HTMLAnchorElement
   a.href = resolveRelative(currentSlug, node.slug)
   a.dataset.for = node.slug
-  a.textContent = node.displayName
+
+  const date = node.data?.date
+  if (date) {
+    const formatted = formatExplorerDate(date as unknown as string)
+    const isIndex = node.slug === "index" || node.slug.endsWith("/index")
+    a.textContent = isIndex
+      ? `Updated ${formatted}`
+      : `${formatted}: ${node.displayName}`
+  } else {
+    a.textContent = node.displayName
+  }
 
   if (currentSlug === node.slug) {
     a.classList.add("active")
