@@ -1,5 +1,5 @@
 ---
-title: "04. Volatility Drag vs Premium Drag in Deductible Optimization"
+title: "Volatility Drag vs Premium Drag in Deductible Optimization"
 date: 2026-02-26
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "07. Loss Severity Estimation and the Shadow Mean"
+title: "Loss Severity Estimation and the Shadow Mean"
 date: 2026-02-28
 ---
 

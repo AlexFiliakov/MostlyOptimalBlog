@@ -1,5 +1,5 @@
 ---
-title: "08. Exploring Volatility: Optimal Deductibles Under Dual Uncertainty"
+title: "Exploring Volatility: Optimal Deductibles Under Dual Uncertainty"
 date: 2026-02-28
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "06. Exploring Expectiles: A Unified Risk Measure Under Tail Variation"
+title: "Exploring Expectiles: A Unified Risk Measure Under Tail Variation"
 date: 2026-02-27
 ---
 

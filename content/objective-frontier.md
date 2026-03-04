@@ -1,5 +1,5 @@
 ---
-title: "09. The Objective Frontier: Why There Is No Single Right Deductible"
+title: "The Objective Frontier: Why There Is No Single Right Deductible"
 date: 2026-03-01
 ---
 

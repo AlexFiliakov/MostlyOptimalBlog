@@ -1,5 +1,5 @@
 ---
-title: "05. Risk Measures Under Catastrophic Tail Variation: VaR vs CTE"
+title: "Risk Measures Under Catastrophic Tail Variation: VaR vs CTE"
 date: 2026-02-27
 ---
 

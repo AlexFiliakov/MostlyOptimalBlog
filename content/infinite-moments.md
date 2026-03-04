@@ -1,5 +1,5 @@
 ---
-title: "11. When Variance Doesn't Exist: Infinite Moments and the Limits of Classical Insurance Analytics"
+title: "When Variance Doesn't Exist: Infinite Moments and the Limits of Classical Insurance Analytics"
 date: 2026-03-03
 ---
 

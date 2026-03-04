@@ -1,5 +1,5 @@
 ---
-title: "10. The Decision Cloud: How Severity Assumptions Reshape Optimal Retention"
+title: "The Decision Cloud: How Severity Assumptions Reshape Optimal Retention"
 date: 2026-03-01
 ---
 
